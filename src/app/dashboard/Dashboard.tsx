@@ -1,9 +1,12 @@
 import LayoutDash from "../LayoutDash"
 import { Chart } from 'react-chartjs-2';
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend, LineElement, PointElement, ChartData } from "chart.js";
+import { Chart as ChartJS, BarElement, ArcElement, DoughnutController, CategoryScale, LinearScale, Tooltip, Legend, LineElement, PointElement, ChartData  } from "chart.js";
+import { Card } from "@/components/ui/card";
 
 ChartJS.register(
   BarElement,
+  ArcElement,
+  DoughnutController,
   CategoryScale,
   LinearScale,
   Tooltip,
@@ -35,25 +38,91 @@ const data: ChartData<'bar' | 'line', number[], string> = {
 ]
 }
 
+const doughnutData = {
+  labels: ['Red', 'Blue', 'Yellow', 'Green'],
+  datasets: [
+    {
+      label: 'Category Distribution',
+      data: [20, 30, 25, 25],
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+      borderWidth: 1
+    }
+  ]
+};
+
+
 function Dashboard() {
   
 
   return (
     <LayoutDash>
         <p>Bienvenido al panel de control.</p>
-        <Chart type="bar"  data = {data} options = {{
-              scales: {
-                y: {
-                  beginAtZero: true
+        <div className="flex justify-between pb-6">
+          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center p-10">
+            <Chart type="bar" className="w-full"  data = {data} options = {{
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  },
+                  plugins: {
+                    legend: {
+                      display: true,
+                      position: 'top'
+                    }
+                  }
+                }}/>
+          </Card>
+          <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+            <Chart
+              type="doughnut" // Cambiar el tipo a doughnut
+              data={doughnutData}
+              // className="bg-slate-800"
+              options={{
+                plugins: {
+                  legend: {
+                    display: true,
+                    position: 'top'
+                  }
                 }
-              },
-              plugins: {
-                legend: {
-                  display: true,
-                  position: 'top'
+              }}
+            />
+          </Card>
+        </div>
+        <div className="flex justify-between pb-10">
+          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center p-10">
+            <Chart type="bar" className="w-full"  data = {data} options = {{
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  },
+                  plugins: {
+                    legend: {
+                      display: true,
+                      position: 'top'
+                    }
+                  }
+                }}/>
+          </Card>
+          <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+            <Chart
+              type="doughnut" // Cambiar el tipo a doughnut
+              data={doughnutData}
+              // className="bg-slate-800"
+              options={{
+                plugins: {
+                  legend: {
+                    display: true,
+                    position: 'top'
+                  }
                 }
-              }
-            }}/>
+              }}
+            />
+          </Card>
+        </div>
+        
+        
         
     </LayoutDash>
   )
