@@ -1,4 +1,4 @@
-import {  Home, LayoutGrid, Shirt, ClipboardMinus, UserRound } from "lucide-react"
+import {  Home, ClipboardMinus, UserRound, Sheet } from "lucide-react"
 
 import {
   Sidebar,
@@ -14,34 +14,34 @@ import {
 // Menu items.
 const items = [
   {
-    title: "Inicio",
-    url: "inicio",
+    title: "Dashboard",
+    url: "dashboard",
     icon: Home,
   },
-  {
-    title: "Perspectiva",
-    url: "perspectiva",
-    icon: Shirt,
-  },
-  {
-    title: "Etapas",
-    url: "etapas",
-    icon: LayoutGrid,
-  },
+  // {
+  //   title: "Perspectiva",
+  //   url: "perspectiva",
+  //   icon: Shirt,
+  // },
+  // {
+  //   title: "Etapas",
+  //   url: "etapas",
+  //   icon: LayoutGrid,
+  // },
   {
     title: "Objetivos base",
     url: "objetivos_base",
     icon: ClipboardMinus,
   },
-  {
-    title: "Mapa estrategico",
-    url: "mapa_estrategico",
-    icon: UserRound,
-  },
+  // {
+  //   title: "Mapa estrategico",
+  //   url: "mapa_estrategico",
+  //   icon: UserRound,
+  // },
   {
     title: "Tablero de control",
     url: "tablero_de_control",
-    icon: UserRound,
+    icon: Sheet,
   },
 ]
 
