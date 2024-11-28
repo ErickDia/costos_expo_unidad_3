@@ -1,6 +1,8 @@
 import LayoutDash from "../LayoutDash"
 import { Chart } from 'react-chartjs-2';
-import { Chart as ChartJS, BarElement, ArcElement, DoughnutController, CategoryScale, LinearScale, Tooltip, Legend, LineElement, PointElement, ChartData  } from "chart.js";
+import { Chart as ChartJS, BarElement, ArcElement, DoughnutController, CategoryScale, LinearScale, Tooltip, Legend, LineElement, PointElement
+  // ChartData 
+} from "chart.js/auto";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 
@@ -30,40 +32,40 @@ type ChartDataw = {
   }[]
 };
 
-const data: ChartData<'bar' | 'line', number[], string> = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
-      {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      type: 'bar',
-      backgroundColor: 'rgba(75, 192, 192, 0.6)',
-      borderWidth: 1
-    },
-    {
-      label: '# of Votes (Line)',
-      type: 'line', // Tipo de gráfico para este dataset
-      data: [10, 15, 8, 6, 3, 3],
-      borderColor: 'rgba(255, 99, 132, 1)',
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderWidth: 2,
-      tension: 0, // Suaviza la curva de la línea
-      pointRadius: 5 // Tamaño de los puntos en la línea
-    }
-  ]
-}
+// const data: ChartData<'bar' | 'line', number[], string> = {
+//   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//   datasets: [
+//       {
+//       label: '# of Votes',
+//       data: [12, 19, 3, 5, 2, 3],
+//       type: 'bar',
+//       backgroundColor: 'rgba(75, 192, 192, 0.6)',
+//       borderWidth: 1
+//     },
+//     {
+//       label: '# of Votes (Line)',
+//       type: 'line', // Tipo de gráfico para este dataset
+//       data: [10, 15, 8, 6, 3, 3],
+//       borderColor: 'rgba(255, 99, 132, 1)',
+//       backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//       borderWidth: 2,
+//       tension: 0, // Suaviza la curva de la línea
+//       pointRadius: 5 // Tamaño de los puntos en la línea
+//     }
+//   ]
+// }
 
-const doughnutData = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green'],
-  datasets: [
-    {
-      label: 'Category Distribution',
-      data: [20, 30, 25, 25],
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
-      borderWidth: 1
-    }
-  ]
-};
+// const doughnutData = {
+//   labels: ['Red', 'Blue', 'Yellow', 'Green'],
+//   datasets: [
+//     {
+//       label: 'Category Distribution',
+//       data: [20, 30, 25, 25],
+//       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+//       borderWidth: 1
+//     }
+//   ]
+// };
 
 
 function Dashboard() {
@@ -152,7 +154,7 @@ function Dashboard() {
               label: 'Tiempo Promedio de Entrega',
               type: 'line', // Tipo de gráfico para este dataset
               data: [2, 2.5, 2.3, 2.2],
-              borderColor: 'rgba(255, 99, 132, 1)',
+              borderColor: 'rgba(75, 192, 192, 1)',
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 2,
               tension: 0, // Suaviza la curva de la línea
@@ -185,9 +187,8 @@ function Dashboard() {
           datasets: [
             {
               label: 'Rendimiento de Combustible km/L',
-              type: 'line', // Tipo de gráfico para este dataset
+              type: 'bar', // Tipo de gráfico para este dataset
               data: [8.7, 8.5, 8.4, 8.5],
-              borderColor: 'rgba(255, 99, 132, 1)',
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 2,
               tension: 0, // Suaviza la curva de la línea
@@ -220,19 +221,18 @@ function Dashboard() {
           labels: ['2021', '2022', '2023', '(Actual)2024'],
           datasets: [
             {
-              label: 'Rendimiento de Combustible km/L',
-              type: 'line', // Tipo de gráfico para este dataset
-              data: [8.7, 8.5, 8.4, 8.5],
-              borderColor: 'rgba(255, 99, 132, 1)',
+              label: 'Tiempo de inactividad anual',
+              type: 'bar', // Tipo de gráfico para este dataset
+              data: [17, 18, 20, 21],
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 2,
               tension: 0, // Suaviza la curva de la línea
               pointRadius: 5 // Tamaño de los puntos en la línea
             },
             {
-              label: 'Rendimiento de Combustible Esperado km/L',
+              label: 'Tiempo de inactividad esperado',
               type: 'line', // Tipo de gráfico para este dataset
-              data: [10, 10, 10, 10],
+              data: [9, 9, 9, 9],
               borderColor: 'rgba(255, 99, 132, 1)',
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderWidth: 2,
@@ -256,19 +256,18 @@ function Dashboard() {
           labels: ['2021', '2022', '2023', '(Actual)2024'],
           datasets: [
             {
-              label: 'Rendimiento de Combustible km/L',
-              type: 'line', // Tipo de gráfico para este dataset
-              data: [8.7, 8.5, 8.4, 8.5],
-              borderColor: 'rgba(255, 99, 132, 1)',
+              label: 'valoracion del clima laboral',
+              type: 'bar', // Tipo de gráfico para este dataset
+              data: [70, 85, 65, 75],
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 2,
               tension: 0, // Suaviza la curva de la línea
               pointRadius: 5 // Tamaño de los puntos en la línea
             },
             {
-              label: 'Rendimiento de Combustible Esperado km/L',
+              label: 'valor esperado',
               type: 'line', // Tipo de gráfico para este dataset
-              data: [10, 10, 10, 10],
+              data: [80, 80, 80, 80],
               borderColor: 'rgba(255, 99, 132, 1)',
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderWidth: 2,
@@ -292,19 +291,19 @@ function Dashboard() {
           labels: ['2021', '2022', '2023', '(Actual)2024'],
           datasets: [
             {
-              label: 'Rendimiento de Combustible km/L',
+              label: '% cumplimiento de metas',
               type: 'line', // Tipo de gráfico para este dataset
-              data: [8.7, 8.5, 8.4, 8.5],
-              borderColor: 'rgba(255, 99, 132, 1)',
+              data: [60, 70, 75, 75],
+              borderColor: 'rgba(75, 192, 192, 1)',
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 2,
               tension: 0, // Suaviza la curva de la línea
               pointRadius: 5 // Tamaño de los puntos en la línea
             },
             {
-              label: 'Rendimiento de Combustible Esperado km/L',
+              label: '% esperado',
               type: 'line', // Tipo de gráfico para este dataset
-              data: [10, 10, 10, 10],
+              data: [85, 85, 85, 85],
               borderColor: 'rgba(255, 99, 132, 1)',
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderWidth: 2,
@@ -323,12 +322,12 @@ console.log(set_Objetivos_base);
   return (
     <LayoutDash>
         <h1 className="mb-3">FINANCIERA</h1>
-        <div className="flex justify-between pb-6">
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full"  data = {objetivos_base[0].data} options = {{
+        <div className="flex justify-between pb-6 md:flex-row flex-col">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
+            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[0].data} options = {{
                   scales: {
-                    y: {
-                      beginAtZero: true
+                    y: {  
+                      beginAtZero: true 
                     }
                   },
                   plugins: {
@@ -339,7 +338,7 @@ console.log(set_Objetivos_base);
                   }
                 }}/>
           </Card>
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[1].data} options = {{
                   scales: {
                     y: {
@@ -371,8 +370,8 @@ console.log(set_Objetivos_base);
           </Card> */}
         </div>
         <h1 className="mb-3">Cliente</h1>
-        <div className="flex justify-between pb-10">
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+        <div className="flex justify-between pb-10 md:flex-row flex-col">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[2].data} options = {{
                   scales: {
                     y: {
@@ -404,8 +403,8 @@ console.log(set_Objetivos_base);
           </Card> */}
         </div>
         <h1 className="mb-3">PROCESOS</h1>
-        <div className="flex justify-between pb-10">
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+        <div className="flex justify-between pb-10 md:flex-row flex-col">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[3].data} options = {{
                   scales: {
                     y: {
@@ -420,7 +419,7 @@ console.log(set_Objetivos_base);
                   }
                 }}/>
           </Card>
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[4].data} options = {{
                   scales: {
                     y: {
@@ -452,8 +451,8 @@ console.log(set_Objetivos_base);
           </Card> */}
         </div>
         <h1 className="mb-3">APRENDIZAJE</h1>
-        <div className="flex justify-between pb-10">
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+        <div className="flex justify-between pb-10 md:flex-row flex-col">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[5].data} options = {{
                   scales: {
                     y: {
@@ -468,7 +467,7 @@ console.log(set_Objetivos_base);
                   }
                 }}/>
           </Card>
-          <Card className="w-[49%] max-h-[350px] p-10 flex justify-center">
+          <Card className="md:w-[49%] w-full max-h-[550px] p-10 flex justify-center">
             <Chart type="bar" className="w-full"  data = {objetivos_base[6].data} options = {{
                   scales: {
                     y: {

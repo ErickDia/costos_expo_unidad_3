@@ -1,4 +1,4 @@
-import {  Home, ClipboardMinus, UserRound, Sheet } from "lucide-react"
+import {  Home, ClipboardMinus, Sheet } from "lucide-react"
 
 import {
   Sidebar,
