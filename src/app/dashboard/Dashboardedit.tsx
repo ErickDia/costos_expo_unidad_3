@@ -181,7 +181,7 @@ function Dashboardedit() {
                               />
                             </Card>
                           </div>
-                          <div className="grid grid-cols-2 gap-5 w-full">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
                             {
                               perspectiva.indicadores.map((indicador) => {
                                 return (

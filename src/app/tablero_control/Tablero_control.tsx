@@ -70,6 +70,8 @@ export const Tablero_control = () => {
   const [refreshpage, setrefreshpage] = useState(true)
 
   const buttonNuevaCategoria = useRef<HTMLButtonElement>(null);
+  const buttonNuevaDataBasica = useRef<HTMLButtonElement>(null);
+
 
   const [id_indicador, setid_indicador] = useState(0)
 
@@ -83,17 +85,24 @@ export const Tablero_control = () => {
     indicadores: []
   })
 
+
+  const [val_perspectiva, setVal_perspectiva] = useState("")
+  const [val_objname, setVal_objname] = useState("")
+  const [val_nomindicar, setVal_nomindicar] = useState("")
+  const [val_tendencia, setVal_tendencia] = useState("")
+  const [val_frecuencia_de_medicion, setVal_frecuencia_de_medicion] = useState("")
+
   const [perspectivas, set_perspectivas] = useState<Perspectiva[]>([])
 
 
   const sendForm = () => {
-    console.log(id_indicador);
+    // console.log(id_indicador);
     
-    console.log(val_2021);
-    console.log(val_2022);
-    console.log(val_2023);
-    console.log(val_2024);
-    console.log(val_meta_2024);
+    // console.log(val_2021);
+    // console.log(val_2022);
+    // console.log(val_2023);
+    // console.log(val_2024);
+    // console.log(val_meta_2024);
 
     requestApi({ url: `/api/v1/costos/indicadores`, type: 'PUT', data: {
       perspectiva: listIndicadores.perspectiva,
@@ -146,34 +155,86 @@ export const Tablero_control = () => {
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="cate_name" className="text-right">
+                      <Label htmlFor="cate_2021" className="text-right">
                           2021*
                       </Label>
-                      <Input type="number" id="cate_name" value={val_2021} onChange={(e) => setVal_2021(e.target.value)} className="col-span-3" />
+                      <Input type="number" id="cate_2021" value={val_2021} onChange={(e) => setVal_2021(e.target.value)} className="col-span-3" />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="cate_name" className="text-right">
+                      <Label htmlFor="cate_2022" className="text-right">
                           2022*
                       </Label>
-                      <Input type="number" id="cate_name" value={val_2022} onChange={(e) => setVal_2022(e.target.value)} className="col-span-3" />
+                      <Input type="number" id="cate_2022" value={val_2022} onChange={(e) => setVal_2022(e.target.value)} className="col-span-3" />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="cate_name" className="text-right">
+                      <Label htmlFor="cate_2023" className="text-right">
                           2023*
                       </Label>
-                      <Input type="number" id="cate_name" value={val_2023} onChange={(e) => setVal_2023(e.target.value)} className="col-span-3" />
+                      <Input type="number" id="cate_2023" value={val_2023} onChange={(e) => setVal_2023(e.target.value)} className="col-span-3" />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="cate_name" className="text-right">
+                      <Label htmlFor="cate_2024" className="text-right">
                           2024*
                       </Label>
-                      <Input type="number" id="cate_name" value={val_2024} onChange={(e) => setVal_2024(e.target.value)} className="col-span-3" />
+                      <Input type="number" id="cate_2024" value={val_2024} onChange={(e) => setVal_2024(e.target.value)} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="cate_meta_2024" className="text-right">
+                          META 2024*
+                      </Label>
+                      <Input type="number" id="cate_meta_2024" value={val_meta_2024} onChange={(e) => setVal_meta_2024(e.target.value)} className="col-span-3" />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit" onClick={() => {sendForm()}}>Guardar cambios</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+
+        <Dialog>
+            <DialogTrigger asChild>
+            <Button variant="outline"  className='my-4 hidden' ref={buttonNuevaDataBasica}><Plus />Nueva Objetivo</Button>
+            </DialogTrigger>
+            <Button variant="outline"  className='my-4'  onClick={() => {
+                            buttonNuevaDataBasica.current?.click()
+                        }}><Plus />Nuevo Objetivo</Button>
+            <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Crear objetivo</DialogTitle>
+                    <DialogDescription>
+                        Ingresa los datos para el objetivo.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="cate_name" className="text-right">
+                          Perspectiva
+                      </Label>
+                      <Input id="cate_name" value={val_perspectiva} onChange={(e) => setVal_perspectiva(e.target.value)} className="col-span-3" />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
                       <Label htmlFor="cate_name" className="text-right">
-                          META 2024*
+                          Nombre del objetivo
                       </Label>
-                      <Input type="number" id="cate_name" value={val_meta_2024} onChange={(e) => setVal_meta_2024(e.target.value)} className="col-span-3" />
+                      <Input  id="cate_name" value={val_objname} onChange={(e) => setVal_objname(e.target.value)} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="cate_name" className="text-right">
+                          Nombre de indicador
+                      </Label>
+                      <Input  id="cate_name" value={val_nomindicar} onChange={(e) => setVal_nomindicar(e.target.value)} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="cate_name" className="text-right">
+                          Tendencia
+                      </Label>
+                      <Input  id="cate_name" value={val_tendencia} onChange={(e) => setVal_tendencia(e.target.value)} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="cate_name" className="text-right">
+                          Frecuencia de medición
+                      </Label>
+                      <Input  id="cate_name" value={val_frecuencia_de_medicion} onChange={(e) => setVal_frecuencia_de_medicion(e.target.value)} className="col-span-3" />
                     </div>
                 </div>
                 <DialogFooter>
@@ -191,7 +252,7 @@ export const Tablero_control = () => {
                 <TableHead className="w-[300px]">OBJETIVOS ESTRATEGICOS BASE</TableHead>
                 <TableHead className="w-[200px]">NOMBRE DE INDICADOR</TableHead>
                 {/* <TableHead className="w-[300px]">FORMULA DE INDICADOR</TableHead> */}
-                <TableHead className="w-[150px]">FUENTE DE DATOS</TableHead>
+                {/* <TableHead className="w-[150px]">FUENTE DE DATOS</TableHead> */}
                 <TableHead className="w-[100px]">TENDENCIA</TableHead>
                 <TableHead className="w-[100px]">FRECUENCIA DE MEDICION</TableHead>
                 <TableHead className="w-[70px]">UMD</TableHead>
@@ -226,7 +287,7 @@ export const Tablero_control = () => {
                       <TableCell>{obj_base.objBase_name}</TableCell>
                       <TableCell>{obj_base.name_indicador}</TableCell>
                       {/* <TableCell>{obj_base.formula_indicador}</TableCell> */}
-                      <TableCell>{obj_base.fuente_de_datos}</TableCell>
+                      {/* <TableCell>{obj_base.fuente_de_datos}</TableCell> */}
                       <TableCell>{obj_base.tendencia}</TableCell>
                       <TableCell>{obj_base.frecuencia_medicion}</TableCell>
                       <TableCell>{obj_base.UMD}</TableCell>
