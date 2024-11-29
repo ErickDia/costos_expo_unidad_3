@@ -1,7 +1,7 @@
 
 // import { Button } from '@/components/ui/button';
 import LayoutDash from '../LayoutDash';
-import './styles.css'
+// import './styles.css'
 // import { useState } from 'react';
 
 export const Clase_costos = () => {

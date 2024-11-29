@@ -1,4 +1,4 @@
-import {  Home, ClipboardMinus, Sheet, Boxes, Waypoints, Book } from "lucide-react"
+import {  Home, ClipboardMinus, Sheet, Boxes, Waypoints } from "lucide-react"
 
 import {
   Sidebar,
@@ -18,11 +18,11 @@ const items = [
     url: "dashboard",
     icon: Home,
   },
-  {
-    title: "Clase Costos",
-    url: "clase",
-    icon: Book,
-  },
+  // {
+  //   title: "Clase Costos",
+  //   url: "clase",
+  //   icon: Book,
+  // },
   {
     title: "Etapas",
     url: "etapas",
