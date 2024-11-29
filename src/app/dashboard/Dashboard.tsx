@@ -5,6 +5,7 @@ import { Chart as ChartJS, BarElement, ArcElement, DoughnutController, CategoryS
 } from "chart.js/auto";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 
 ChartJS.register(
   BarElement,
@@ -74,8 +75,8 @@ function Dashboard() {
         objBase_id: 1,
         name_perspectiva: "Financiera",
         objBase_name: "Reducir los costos operativos de la flota",
-        name_indicador: "Costo Total de Vida de la Camioneta",
-        formula_indicador: "(Costo adquisición + Mantenimiento + Combustible + Neumáticos) / 10 años",
+        name_indicador: "Costo Total de Vida de la Furgoneta",
+        formula_indicador: "(Costo adquisición + Mantenimiento + Combustible + Neumáticos)",
         fuente_de_datos: "Reporte de costos vehiculares",
         tendencia: "Reducir",
         frecuencia_medicion: "Anual",
@@ -116,7 +117,7 @@ function Dashboard() {
         objBase_id: 2,
         name_perspectiva: "Financiera",
         objBase_name: "Optimizar la inversión en vehículos nuevos",
-        name_indicador: "Retorno de la Inversión de la Camioneta",
+        name_indicador: "Retorno de la Inversión de la Furgoneta",
         formula_indicador: "(Ahorros operativos / Costo de adquisición) * 100",
         fuente_de_datos: "Análisis financiero",
         tendencia: "Incrementar",
@@ -134,14 +135,14 @@ function Dashboard() {
           labels: ['2021', '2022', '2023', '(Actual)2024'],
           datasets: [
               {
-              label: '----',
+              label: '% Retorno de inversion',
               data: [10, 12, 15, 15],
               type: 'bar',
               backgroundColor: 'rgba(75, 192, 192, 0.6)',
               borderWidth: 1
             },
             {
-              label: '******',
+              label: '% esperado',
               type: 'line', // Tipo de gráfico para este dataset
               data: [20, 20, 20, 20],
               borderColor: 'rgba(255, 99, 132, 1)',
@@ -554,8 +555,8 @@ function Dashboard() {
     {
       id: 1,
       name: "Finaciera",
-      porcentaje: "96.64%",
-      porcentajenum: 0.9664
+      porcentaje: "69.64%",
+      porcentajenum: 0.6964
     },
     {
       id: 2,
@@ -577,6 +578,7 @@ function Dashboard() {
     }
   ])
 
+  const [seleccion, setseleccion] = useState("FINANCIERA")
 console.log(set_Objetivos_base, setgraficoVocimetro);
 
   
@@ -584,442 +586,486 @@ console.log(set_Objetivos_base, setgraficoVocimetro);
   return (
     <LayoutDash>
         {/* <h1 className="mb-3">FINANCIERA</h1> */}
-        <div className="flex justify-between pb-6 md:flex-row flex-col">
-          <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
-            <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
-              {graficoVocimetro[0].porcentaje}
-            </p>
-            <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
-              {graficoVocimetro[0].name}
-            </p>
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={{
-                labels: ['Filled', 'Empty'],
-                datasets: [
-                  {
-                    data: [graficoVocimetro[0].porcentajenum, 1 - graficoVocimetro[0].porcentajenum], // Rellena según el porcentaje
-                    backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
-                    borderWidth: 0, // Sin bordes
-                  },
-                ],
-              }}
-              options={{
-                circumference: 180, // Muestra solo un semicírculo (180 grados)
-                rotation: -90, // Empieza desde abajo (-90 grados)
-                plugins: {
-                  legend: {
-                    display: false, // Oculta la leyenda
-                  },
-                  tooltip: {
-                    enabled: false, // Opcional: deshabilitar tooltips
-                  },
-                },
-              }}
-            />
-          </Card>
+        <div className="flex justify-center gap-2 pb-6 md:flex-row flex-col">
+          <Badge className="bg-yellow-500 hover:bg-yellow-600 text-2xl cursor-pointer" onClick={() => {setseleccion("FINANCIERA")}}>FINANCIERA</Badge>
+          <Badge className="bg-purple-500 hover:bg-purple-600 text-2xl cursor-pointer" onClick={() => {setseleccion("CLIENTE")}}>CLIENTE</Badge>
+          <Badge className="bg-blue-500 hover:bg-blue-600 text-2xl cursor-pointer" onClick={() => {setseleccion("PROCESO")}}>PROCESO</Badge>
+          <Badge className="bg-green-500 hover:bg-green-600 text-2xl cursor-pointer" onClick={() => {setseleccion("APRENDIZAJE")}}>APRENDIZAJE</Badge>
         </div>
-        <div className="flex justify-between pb-6 md:flex-row flex-col">
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[0].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+        {
+          seleccion == "FINANCIERA" ? (
+        
+          <div>
+            <div className="flex justify-between pb-6 md:flex-row flex-col">
+              <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
+                <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
+                  {graficoVocimetro[0].porcentaje}
+                </p>
+                <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
+                  {graficoVocimetro[0].name}
+                </p>
+                <Chart
+                  type="doughnut" // Cambiar el tipo a doughnut
+                  data={{
+                    labels: ['Filled', 'Empty'],
+                    datasets: [
+                      {
+                        data: [graficoVocimetro[0].porcentajenum, 1 - graficoVocimetro[0].porcentajenum], // Rellena según el porcentaje
+                        backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
+                        borderWidth: 0, // Sin bordes
+                      },
+                    ],
+                  }}
+                  options={{
+                    circumference: 180, // Muestra solo un semicírculo (180 grados)
+                    rotation: -90, // Empieza desde abajo (-90 grados)
+                    plugins: {
+                      legend: {
+                        display: false, // Oculta la leyenda
+                      },
+                      tooltip: {
+                        enabled: false, // Opcional: deshabilitar tooltips
                       },
                     },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[1].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                  }}
+                />
+              </Card>
+            </div>
+            <div className="flex justify-between pb-6 md:flex-row flex-col">
+              <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[0].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[0].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+              <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[1].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[1].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
+                      },
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+              {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+                <Chart
+                  type="doughnut" // Cambiar el tipo a doughnut
+                  data={doughnutData}
+                  // className="bg-slate-800"
+                  options={{
+                    plugins: {
+                      legend: {
+                        display: true,
+                        position: 'top'
+                      }
                     }
-                  }
-                }}/>
-          </Card>
-          {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={doughnutData}
-              // className="bg-slate-800"
-              options={{
-                plugins: {
-                  legend: {
-                    display: true,
-                    position: 'top'
-                  }
-                }
-              }}
-            />
-          </Card> */}
-        </div>
+                  }}
+                />
+              </Card> */}
+            </div>
+          </div>
+          ) : ""
+        }
+        
         {/* <h1 className="mb-3">Cliente</h1> */}
-        <div className="flex justify-between pb-6 md:flex-row flex-col">
-          <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
-            <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
-              {graficoVocimetro[1].porcentaje}
-            </p>
-            <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
-              {graficoVocimetro[1].name}
-            </p>
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={{
-                labels: ['Filled', 'Empty'],
-                datasets: [
-                  {
-                    data: [graficoVocimetro[1].porcentajenum, 1 - graficoVocimetro[1].porcentajenum], // Rellena según el porcentaje
-                    backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
-                    borderWidth: 0, // Sin bordes
-                  },
-                ],
-              }}
-              options={{
-                circumference: 180, // Muestra solo un semicírculo (180 grados)
-                rotation: -90, // Empieza desde abajo (-90 grados)
-                plugins: {
-                  legend: {
-                    display: false, // Oculta la leyenda
-                  },
-                  tooltip: {
-                    enabled: false, // Opcional: deshabilitar tooltips
-                  },
-                },
-              }}
-            />
-          </Card>
-        </div>
-        <div className="flex justify-between pb-10 md:flex-row flex-col">
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[2].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+        {
+          seleccion == "CLIENTE" ? (
+            <div>
+            <div className="flex justify-between pb-6 md:flex-row flex-col">
+              <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
+                <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
+                  {graficoVocimetro[1].porcentaje}
+                </p>
+                <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
+                  {graficoVocimetro[1].name}
+                </p>
+                <Chart
+                  type="doughnut" // Cambiar el tipo a doughnut
+                  data={{
+                    labels: ['Filled', 'Empty'],
+                    datasets: [
+                      {
+                        data: [graficoVocimetro[1].porcentajenum, 1 - graficoVocimetro[1].porcentajenum], // Rellena según el porcentaje
+                        backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
+                        borderWidth: 0, // Sin bordes
+                      },
+                    ],
+                  }}
+                  options={{
+                    circumference: 180, // Muestra solo un semicírculo (180 grados)
+                    rotation: -90, // Empieza desde abajo (-90 grados)
+                    plugins: {
+                      legend: {
+                        display: false, // Oculta la leyenda
+                      },
+                      tooltip: {
+                        enabled: false, // Opcional: deshabilitar tooltips
                       },
                     },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[3].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                  }}
+                />
+              </Card>
+            </div>
+            <div className="flex justify-between pb-10 md:flex-row flex-col">
+            <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[2].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[2].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={doughnutData}
-              // className="bg-slate-800"
-              options={{
-                plugins: {
-                  legend: {
-                    display: true,
-                    position: 'top'
-                  }
-                }
-              }}
-            />
-          </Card> */}
-        </div>
-        <div className="flex justify-between pb-10 md:flex-row flex-col">
-        <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[4].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+              <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[3].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[3].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+              {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+                <Chart
+                  type="doughnut" // Cambiar el tipo a doughnut
+                  data={doughnutData}
+                  // className="bg-slate-800"
+                  options={{
+                    plugins: {
+                      legend: {
+                        display: true,
+                        position: 'top'
+                      }
                     }
-                  }
-                }}/>
-          </Card>
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[5].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                  }}
+                />
+              </Card> */}
+            </div>
+            <div className="flex justify-between pb-10 md:flex-row flex-col">
+            <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[4].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[4].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-        </div>
-        <div className="flex justify-between pb-10 md:flex-row flex-col">
-        <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[6].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+              <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[5].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[5].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-        </div>
-        {/* <h1 className="mb-3">PROCESOS</h1> */}
-        <div className="flex justify-between pb-6 md:flex-row flex-col">
-          <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
-            <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
-              {graficoVocimetro[2].porcentaje}
-            </p>
-            <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
-              {graficoVocimetro[2].name}
-            </p>
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={{
-                labels: ['Filled', 'Empty'],
-                datasets: [
-                  {
-                    data: [graficoVocimetro[2].porcentajenum, 1 - graficoVocimetro[2].porcentajenum], // Rellena según el porcentaje
-                    backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
-                    borderWidth: 0, // Sin bordes
-                  },
-                ],
-              }}
-              options={{
-                circumference: 180, // Muestra solo un semicírculo (180 grados)
-                rotation: -90, // Empieza desde abajo (-90 grados)
-                plugins: {
-                  legend: {
-                    display: false, // Oculta la leyenda
-                  },
-                  tooltip: {
-                    enabled: false, // Opcional: deshabilitar tooltips
-                  },
-                },
-              }}
-            />
-          </Card>
-        </div>
-        <div className="flex justify-between pb-10 md:flex-row flex-col">
-        <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[7].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+            </div>
+            <div className="flex justify-between pb-10 md:flex-row flex-col">
+            <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[6].objBase_name}</p>
+                <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[6].data} options = {{
+                      responsive: true,
+                      maintainAspectRatio: false, 
+                      scales: {
+                        x: {
+                          ticks: {
+                            maxTicksLimit: 10, 
+                            autoSkip: false,// Limita el número de etiquetas en el eje X
+                          },
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[8].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
-                      },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={doughnutData}
-              // className="bg-slate-800"
-              options={{
-                plugins: {
-                  legend: {
-                    display: true,
-                    position: 'top'
-                  }
-                }
-              }}
-            />
-          </Card> */}
-        </div>
-        {/* <h1 className="mb-3">APRENDIZAJE</h1> */}
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}/>
+              </Card>
+            </div>
+            </div>
+          ) : "" }
+        {
+          seleccion == "PROCESO" ? (
 
-        <div className="flex justify-between pb-6 md:flex-row flex-col">
-          <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
-            <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
-              {graficoVocimetro[3].porcentaje}
-            </p>
-            <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
-              {graficoVocimetro[3].name}
-            </p>
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={{
-                labels: ['Filled', 'Empty'],
-                datasets: [
-                  {
-                    data: [graficoVocimetro[3].porcentajenum, 1 - graficoVocimetro[3].porcentajenum], // Rellena según el porcentaje
-                    backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
-                    borderWidth: 0, // Sin bordes
-                  },
-                ],
-              }}
-              options={{
-                circumference: 180, // Muestra solo un semicírculo (180 grados)
-                rotation: -90, // Empieza desde abajo (-90 grados)
-                plugins: {
-                  legend: {
-                    display: false, // Oculta la leyenda
-                  },
-                  tooltip: {
-                    enabled: false, // Opcional: deshabilitar tooltips
-                  },
-                },
-              }}
-            />
-          </Card>
-        </div>
-        <div className="flex justify-between pb-10 md:flex-row flex-col">
-        <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[9].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+          
+            <div>
+              {/* <h1 className="mb-3">PROCESOS</h1> */}
+              <div className="flex justify-between pb-6 md:flex-row flex-col">
+                <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
+                  <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
+                    {graficoVocimetro[2].porcentaje}
+                  </p>
+                  <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
+                    {graficoVocimetro[2].name}
+                  </p>
+                  <Chart
+                    type="doughnut" // Cambiar el tipo a doughnut
+                    data={{
+                      labels: ['Filled', 'Empty'],
+                      datasets: [
+                        {
+                          data: [graficoVocimetro[2].porcentajenum, 1 - graficoVocimetro[2].porcentajenum], // Rellena según el porcentaje
+                          backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
+                          borderWidth: 0, // Sin bordes
+                        },
+                      ],
+                    }}
+                    options={{
+                      circumference: 180, // Muestra solo un semicírculo (180 grados)
+                      rotation: -90, // Empieza desde abajo (-90 grados)
+                      plugins: {
+                        legend: {
+                          display: false, // Oculta la leyenda
+                        },
+                        tooltip: {
+                          enabled: false, // Opcional: deshabilitar tooltips
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          <Card className="md:w-[49%] w-full min-h-[300px] max-h-[550px] p-10 flex justify-center">
-            <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[10].data} options = {{
-                  responsive: true,
-                  maintainAspectRatio: false, 
-                  scales: {
-                    x: {
-                      ticks: {
-                        maxTicksLimit: 10, 
-                        autoSkip: false,// Limita el número de etiquetas en el eje X
+                    }}
+                  />
+                </Card>
+              </div>
+              <div className="flex justify-between pb-10 md:flex-row flex-col">
+                <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                  <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[7].objBase_name}</p>
+                  <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[7].data} options = {{
+                        responsive: true,
+                        maintainAspectRatio: false, 
+                        scales: {
+                          x: {
+                            ticks: {
+                              maxTicksLimit: 10, 
+                              autoSkip: false,// Limita el número de etiquetas en el eje X
+                            },
+                          },
+                        },
+                        plugins: {
+                          legend: {
+                            display: true,
+                            position: 'top'
+                          }
+                        }
+                      }}/>
+                </Card>
+                <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                  <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[8].objBase_name}</p>
+                  <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[8].data} options = {{
+                        responsive: true,
+                        maintainAspectRatio: false, 
+                        scales: {
+                          x: {
+                            ticks: {
+                              maxTicksLimit: 10, 
+                              autoSkip: false,// Limita el número de etiquetas en el eje X
+                            },
+                          },
+                        },
+                        plugins: {
+                          legend: {
+                            display: true,
+                            position: 'top'
+                          }
+                        }
+                      }}/>
+              </Card>
+                {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+                  <Chart
+                    type="doughnut" // Cambiar el tipo a doughnut
+                    data={doughnutData}
+                    // className="bg-slate-800"
+                    options={{
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}
+                  />
+                </Card> */}
+              </div>
+            </div>
+          ) : "" }
+        {
+          seleccion == "APRENDIZAJE" ? (
+            <div>
+
+            
+              {/* <h1 className="mb-3">APRENDIZAJE</h1> */}
+
+              <div className="flex justify-between pb-6 md:flex-row flex-col">
+                <Card className="w-[100%] max-h-[450px] flex justify-center p-10 relative">
+                  <p className="absolute bottom-[30%] left-auto font-bold text-3xl text-gray-600">
+                    {graficoVocimetro[3].porcentaje}
+                  </p>
+                  <p className="absolute bottom-10 left-auto font-bold text-4xl text-gray-600">
+                    {graficoVocimetro[3].name}
+                  </p>
+                  <Chart
+                    type="doughnut" // Cambiar el tipo a doughnut
+                    data={{
+                      labels: ['Filled', 'Empty'],
+                      datasets: [
+                        {
+                          data: [graficoVocimetro[3].porcentajenum, 1 - graficoVocimetro[3].porcentajenum], // Rellena según el porcentaje
+                          backgroundColor: ['#36A2EB', '#E5E5E5'], // Color del indicador y del espacio vacío
+                          borderWidth: 0, // Sin bordes
+                        },
+                      ],
+                    }}
+                    options={{
+                      circumference: 180, // Muestra solo un semicírculo (180 grados)
+                      rotation: -90, // Empieza desde abajo (-90 grados)
+                      plugins: {
+                        legend: {
+                          display: false, // Oculta la leyenda
+                        },
+                        tooltip: {
+                          enabled: false, // Opcional: deshabilitar tooltips
+                        },
                       },
-                    },
-                  },
-                  plugins: {
-                    legend: {
-                      display: true,
-                      position: 'top'
-                    }
-                  }
-                }}/>
-          </Card>
-          {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
-            <Chart
-              type="doughnut" // Cambiar el tipo a doughnut
-              data={doughnutData}
-              // className="bg-slate-800"
-              options={{
-                plugins: {
-                  legend: {
-                    display: true,
-                    position: 'top'
-                  }
-                }
-              }}
-            />
-          </Card> */}
-        </div>
+                    }}
+                  />
+                </Card>
+              </div>
+              <div className="flex justify-between pb-10 md:flex-row flex-col">
+                <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                  <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[9].objBase_name}</p>
+                  <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[9].data} options = {{
+                        responsive: true,
+                        maintainAspectRatio: false, 
+                        scales: {
+                          x: {
+                            ticks: {
+                              maxTicksLimit: 10, 
+                              autoSkip: false,// Limita el número de etiquetas en el eje X
+                            },
+                          },
+                        },
+                        plugins: {
+                          legend: {
+                            display: true,
+                            position: 'top'
+                          }
+                        }
+                      }}/>
+                </Card>
+                <Card className="md:w-[49%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                  <p className="text-center text-2xl font-semibold text-gray-500">{objetivos_base[10].objBase_name}</p>
+                  <Chart type="bar" className="w-full max-h-[550px]"  data = {objetivos_base[10].data} options = {{
+                        responsive: true,
+                        maintainAspectRatio: false, 
+                        scales: {
+                          x: {
+                            ticks: {
+                              maxTicksLimit: 10, 
+                              autoSkip: false,// Limita el número de etiquetas en el eje X
+                            },
+                          },
+                        },
+                        plugins: {
+                          legend: {
+                            display: true,
+                            position: 'top'
+                          }
+                        }
+                      }}/>
+              </Card>
+                {/* <Card className="w-[49%] max-h-[350px] flex justify-center p-10">
+                  <Chart
+                    type="doughnut" // Cambiar el tipo a doughnut
+                    data={doughnutData}
+                    // className="bg-slate-800"
+                    options={{
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: 'top'
+                        }
+                      }
+                    }}
+                  />
+                </Card> */}
+              </div>
+            </div>
+          ) : "" }
         
         
         
