@@ -1,4 +1,4 @@
-import {  Home, ClipboardMinus, Sheet, Boxes, Waypoints } from "lucide-react"
+import {  Home, Book } from "lucide-react"
 
 import {
   Sidebar,
@@ -18,31 +18,39 @@ const items = [
     url: "dashboard",
     icon: Home,
   },
+  {
+    title: "Southern Copper Perú",
+    url: "southern",
+    icon: Book,
+  },
+
+
   // {
   //   title: "Clase Costos",
   //   url: "clase",
   //   icon: Book,
   // },
-  {
-    title: "Etapas",
-    url: "etapas",
-    icon: Boxes,
-  },
-  {
-    title: "Objetivos base",
-    url: "objetivos_base",
-    icon: ClipboardMinus,
-  },
-  {
-    title: "Mapa estrategico",
-    url: "mapa_estrategico",
-    icon: Waypoints,
-  },
-  {
-    title: "Tablero de control",
-    url: "tablero_de_control",
-    icon: Sheet,
-  },
+  // {
+  //   title: "Etapas",
+  //   url: "etapas",
+  //   icon: Boxes,
+  // },
+  // {
+  //   title: "Objetivos base",
+  //   url: "objetivos_base",
+  //   icon: ClipboardMinus,
+  // },
+  // {
+  //   title: "Mapa estrategico",
+  //   url: "mapa_estrategico",
+  //   icon: Waypoints,
+  // },
+  // {
+  //   title: "Tablero de control",
+  //   url: "tablero_de_control",
+  //   icon: Sheet,
+  // },
+  
 ]
 
 export function AppSidebar() {
