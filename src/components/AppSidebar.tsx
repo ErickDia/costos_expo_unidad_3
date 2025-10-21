@@ -1,4 +1,4 @@
-import {  Home, Book } from "lucide-react"
+import {  Home, Book, Circle } from "lucide-react"
 
 import {
   Sidebar,
@@ -9,7 +9,15 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 
 // Menu items.
 const items = [
@@ -18,11 +26,11 @@ const items = [
     url: "dashboard",
     icon: Home,
   },
-  {
-    title: "Southern Copper Perú",
-    url: "southern",
-    icon: Book,
-  },
+  // {
+  //   title: "Southern Copper Perú",
+  //   url: "southern",
+  //   icon: Book,
+  // },
 
 
   // {
@@ -71,6 +79,33 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem key="prueba" className="cursor-pointer">
+                <Collapsible defaultOpen className="group/collapsible">
+                  <SidebarMenuItem>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton asChild>
+                        <span>
+                          <Circle />
+                          <span>Southern Copper Perú</span>
+                        </span>
+                        
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="southernBalanceGeneral">
+                            <Book />
+                            <span>Balance General</span>
+                          </a>
+                        </SidebarMenuButton>
+                        <SidebarMenuSubItem />
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                  </SidebarMenuItem>
+                </Collapsible>
+              </SidebarMenuItem>
+              
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
