@@ -79,7 +79,7 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
-              <SidebarMenuItem key="prueba" className="cursor-pointer">
+              <SidebarMenuItem key="SouthernCopper" className="cursor-pointer">
                 <Collapsible defaultOpen className="group/collapsible">
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
@@ -92,14 +92,21 @@ export function AppSidebar() {
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
+                        <SidebarMenuSub>
+                          <SidebarMenuButton asChild>
+                            <a href="southernBalanceGeneral">
+                              <Book />
+                              <span>Balance General</span>
+                            </a>
+                          </SidebarMenuButton>
+                      </SidebarMenuSub>
                       <SidebarMenuSub>
                         <SidebarMenuButton asChild>
-                          <a href="southernBalanceGeneral">
+                          <a href="southernCuentaResultados">
                             <Book />
-                            <span>Balance General</span>
+                            <span>Cuenta de Resultados</span>
                           </a>
                         </SidebarMenuButton>
-                        <SidebarMenuSubItem />
                       </SidebarMenuSub>
                     </CollapsibleContent>
                   </SidebarMenuItem>

@@ -7,6 +7,7 @@ import './App.css'
 // import { Clase_costos } from './app/clase_costos/Clase_costos'
 import Dashboardedit from './app/dashboard/Dashboardedit'
 import { SouthernBalanceGeneral } from './app/southern/SouthernBalanceGeneral'
+import { SouthernCuentaResultados } from './app/southern/SouthernCuentaResultados'
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
     <>
       <Routes>
           <Route path='/southernBalanceGeneral' element={<SouthernBalanceGeneral />} />
+          <Route path='/southernCuentaResultados' element={<SouthernCuentaResultados />} />
+
           {/* <Route path='/clase' element={<Clase_costos />} />
           <Route path='/etapas' element={<Etapas />} />
           <Route path='/tablero_de_control' element={<Tablero_control />} />

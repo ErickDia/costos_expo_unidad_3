@@ -180,164 +180,196 @@ const activosNoCorrientes = [
 
 const balancePasivos = [
   {
-    "2020": "556,519",
-    "2021": "796,342",
-    "2022": "456,961",
-    "2023": "502,735",
-    "2024": "663,612",
+    "2020": "189,452",
+    "2021": "531,905",
+    "2022": "165,778",
+    "2023": "261,124",
+    "2024": "327,099",
     "Pasivos": "Pasivos Corrientes"
   },
   {
-    "2020": "703,878",
-    "2021": "836,885",
-    "2022": "823,771",
-    "2023": "848,543",
-    "2024": "1,018,016",
+    "2020": "420,426",
+    "2021": "909,382",
+    "2022": "674,270",
+    "2023": "665,805",
+    "2024": "703,582",
     "Pasivos": "Pasivos no Corrientes"
   },
   {
-    "2020": "1,260,397",
-    "2021": "1,633,227",
-    "2022": "1,280,732",
-    "2023": "1,351,278",
-    "2024": "1,681,628",
+    "2020": "609,878",
+    "2021": "1,441,287",
+    "2022": "840,048",
+    "2023": "926,929",
+    "2024": "1,030,681",
     "Pasivos": "Total Pasivos"
   },
   {
-    "2020": "5,612,299",
-    "2021": "5,475,504",
-    "2022": "6,011,848",
-    "2023": "6,088,772",
-    "2024": "6,381,913",
+    "2020": "2,627,460",
+    "2021": "2,368,326",
+    "2022": "3,008,850",
+    "2023": "3,006,460",
+    "2024": "3,390,689",
     "Pasivos": "Patrimonio"
   },
   {
-    "2020": "6,872,696",
-    "2021": "7,108,731",
-    "2022": "7,292,580",
-    "2023": "7,440,050",
-    "2024": "8,063,541",
+    "2020": "3,237,338",
+    "2021": "3,809,613",
+    "2022": "3,848,898",
+    "2023": "3,933,389",
+    "2024": "4,421,370",
     "Pasivos": "Total Pasivo + Patrimonio"
   }
 ]
 
 const pasivosCorrientes = [
   {
-    "2020": "243,172",
-    "2021": "218,816",
-    "2022": "255,026",
-    "2023": "219,439",
-    "2024": "251,956",
-    "Pasivos": "Cuentas por pagar comerciales"
-  },
-  {
-    "2020": "66,340",
-    "2021": "83,777",
-    "2022": "67,904",
-    "2023": "74,537",
-    "2024": "91,947",
-    "Pasivos": "Otras cuentas por pagar"
-  },
-  {
-    "2020": "7,284",
-    "2021": "7,577",
-    "2022": "7,258",
-    "2023": "6,879",
-    "2024": "6,355",
-    "Pasivos": "Pasivo por arrendamientos"
-  },
-  {
-    "2020": "129,200",
-    "2021": "280,099",
+    "2020": "50,000",
+    "2021": "50,000",
     "2022": "0",
-    "2023": "64,455",
-    "2024": "144,245",
-    "Pasivos": "Pasivo por impuesto a las ganancias"
+    "2023": "0",
+    "2024": "0",
+    "Pasivos": "Préstamos bancarios"
   },
   {
-    "2020": "110,523",
-    "2021": "206,073",
-    "2022": "126,773",
-    "2023": "137,425",
-    "2024": "169,109",
-    "Pasivos": "Pasivo para beneficios a los trabajadores"
+    "2020": "93,924",
+    "2021": "129,983",
+    "2022": "122,844",
+    "2023": "197,315",
+    "2024": "280,935",
+    "Pasivos": "Cuentas por pagar comerciales y diversas"
+  },
+  {
+    "2020": "38,552",
+    "2021": "40,890",
+    "2022": "38,832",
+    "2023": "60,483",
+    "2024": "35,633",
+    "Pasivos": "Provisiones, pasivos contingentes y otros pasivos"
+  },
+  {
+    "2020": "2,635",
+    "2021": "644",
+    "2022": "0",
+    "2023": "0",
+    "2024": "0",
+    "Pasivos": "Instrumentos financieros derivados de cobertura"
+  },
+  {
+    "2020": "4,341",
+    "2021": "45,550",
+    "2022": "4,102",
+    "2023": "3,326",
+    "2024": "2,474",
+    "Pasivos": "Obligaciones financieras"
+  },
+  {
+    "2020": "0",
+    "2021": "0",
+    "2022": "0",
+    "2023": "0",
+    "2024": "8,057",
+    "Pasivos": "Pasivos por impuestos a las ganancias corrientes"
+  },
+  {
+    "2020": "0",
+    "2021": "264,838",
+    "2022": "0",
+    "2023": "0",
+    "2024": "0",
+    "Pasivos": "Pasivo asociado directamente con la inversión en Yanacocha mantenida para la venta"
   }
 ]
 
 const pasivosNoCorrientes = [
   {
-    "2020": "14,599",
-    "2021": "7,094",
-    "2022": "78",
-    "2023": "106",
-    "2024": "27,679",
-    "Pasivos": "Pasivo por arrendamientos"
+    "2020": "0",
+    "2021": "2,881",
+    "2022": "3,320",
+    "2023": "6,477",
+    "2024": "12,806",
+    "Pasivos": "Cuentas por pagar comerciales y diversas"
   },
   {
-    "2020": "485,122",
-    "2021": "638,093",
-    "2022": "703,144",
-    "2023": "738,655",
-    "2024": "820,170",
-    "Pasivos": "Pasivo por impuesto a las ganancias diferido"
+    "2020": "118,316",
+    "2021": "103,483",
+    "2022": "100,353",
+    "2023": "84,507",
+    "2024": "109,057",
+    "Pasivos": "Provisiones, pasivos contingentes y otros pasivos"
   },
   {
-    "2020": "170,618",
-    "2021": "165,038",
-    "2022": "96,674",
-    "2023": "99,565",
-    "2024": "89,224",
-    "Pasivos": "Pasivo para retiro de activos y cierre de mina"
+    "2020": "280,010",
+    "2021": "785,300",
+    "2022": "553,692",
+    "2023": "553,207",
+    "2024": "553,448",
+    "Pasivos": "Obligaciones financieras"
   },
   {
-    "2020": "33,539",
-    "2021": "26,660",
-    "2022": "23,875",
-    "2023": "10,217",
-    "2024": "80,943",
-    "Pasivos": "Otras cuentas por pagar"
+    "2020": "22,100",
+    "2021": "17,718",
+    "2022": "16,905",
+    "2023": "21,614",
+    "2024": "28,271",
+    "Pasivos": "Pasivo financiero por contraprestación contingente"
   }
 ]
 const patrimonio = [
   {
-    "2020": "321,797",
-    "2021": "321,797",
-    "2022": "321,797",
-    "2023": "321,797",
-    "2024": "321,797",
-    "Pasivos": "Capital social asignado "
+    "2020": "750,497",
+    "2021": "750,497",
+    "2022": "750,497",
+    "2023": "750,497",
+    "2024": "750,497",
+    "Pasivos": "Capital social"
   },
   {
-    "2020": "51,847",
-    "2021": "51,847",
-    "2022": "51,847",
-    "2023": "51,847",
-    "2024": "51,847",
+    "2020": "791",
+    "2021": "791",
+    "2022": "791",
+    "2023": "791",
+    "2024": "791",
     "Pasivos": "Acciones de inversión"
   },
   {
-    "2020": "61,972",
-    "2021": "61,972",
-    "2022": "61,972",
-    "2023": "61,972",
-    "2024": "61,972",
+    "2020": "218,450",
+    "2021": "218,450",
+    "2022": "218,450",
+    "2023": "218,450",
+    "2024": "218,450",
     "Pasivos": "Capital adicional"
   },
   {
-    "2020": "245,000",
-    "2021": "245,000",
-    "2022": "245,000",
-    "2023": "245,000",
-    "2024": "245,000",
+    "2020": "163,194",
+    "2021": "163,270",
+    "2022": "163,270",
+    "2023": "163,372",
+    "2024": "163,539",
+    "Pasivos": "Reserva legal"
+  },
+  {
+    "2020": "269",
+    "2021": "269",
+    "2022": "31,897",
+    "2023": "31,897",
+    "2024": "31,897",
     "Pasivos": "Otras reservas de capital"
   },
   {
-    "2020": "4,931,683",
-    "2021": "4,794,888",
-    "2022": "5,331,232",
-    "2023": "5,408,156",
-    "2024": "5,701,297",
+    "2020": "1,503,785",
+    "2021": "1,239,526",
+    "2022": "1,841,761",
+    "2023": "1,841,549",
+    "2024": "2,225,611",
     "Pasivos": "Resultados acumulados"
+  },
+  {
+    "2020": "-9,526",
+    "2021": "-4,477",
+    "2022": "2,184",
+    "2023": "-96",
+    "2024": "-96",
+    "Pasivos": "Otras reservas de patrimonio"
   }
 ]
 
@@ -349,14 +381,14 @@ export const SouthernBalanceGeneral = () => {
           <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300 ">
-                            <TableHead className="w-[200px] ">Activos</TableHead>
-                            <TableHead className="w-[70px] text-center">2021</TableHead>
-                            <TableHead className="w-[70px] text-center">2021</TableHead>
-                            <TableHead className="w-[70px] text-center">2022</TableHead>
-                            <TableHead className="w-[70px] text-center">2023</TableHead>                            
-                            <TableHead className="w-[70px] text-center">2024</TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>
+                        <TableRow className="bg-gray-400 text-white hover:bg-gray-500">
+                            <TableHead className="w-[200px] text-white">Activos</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2021</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2021</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2022</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2023</TableHead>                            
+                            <TableHead className="w-[70px] text-white text-center">2024</TableHead>
+                            <TableHead className="w-[70px] text-white text-center"></TableHead>
 
                         </TableRow>
                     </TableHeader>
@@ -367,9 +399,9 @@ export const SouthernBalanceGeneral = () => {
                             return (
                               <Collapsible asChild>
                                 <>
-                                  <TableRow key={bal.Activos} className="bg-gray-100 w-full">
+                                  <TableRow key={bal.Activos} className="bg-gray-200 w-full">
 
-                                            <TableCell className="font-bold bg-gray-200">{bal.Activos}</TableCell>
+                                            <TableCell className="font-bold bg-gray-300">{bal.Activos}</TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
@@ -394,8 +426,8 @@ export const SouthernBalanceGeneral = () => {
                                         (bal.Activos == "Activos Corrientes" || bal.Activos == "Activos no Corrientes") ? 
                                           ((bal.Activos == "Activos Corrientes" ? activosCorrientes : activosNoCorrientes).map((act) => (
                                             <>
-                                              <TableRow key={act.Activos} className="">
-                                                  <TableCell className="bg-gray-100">{act.Activos}</TableCell>
+                                              <TableRow key={act.Activos} className="bg-gray-100  ">
+                                                  <TableCell className="bg-gray-200">{act.Activos}</TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2020]}</p></div></TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2021]}</p></div></TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2022]}</p></div></TableCell>
@@ -422,14 +454,14 @@ export const SouthernBalanceGeneral = () => {
             <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300">
-                            <TableHead className="w-[200px] ">Pasivos</TableHead>
-                            <TableHead className="w-[70px]  text-center">2021</TableHead>
-                            <TableHead className="w-[70px]  text-center">2021</TableHead>
-                            <TableHead className="w-[70px]  text-center">2022</TableHead>
-                            <TableHead className="w-[70px]  text-center">2023</TableHead>                            
-                            <TableHead className="w-[70px]  text-center">2024</TableHead>
-                            <TableHead className="w-[70px]  text-center"></TableHead>
+                        <TableRow className="bg-gray-400 text-white hover:bg-gray-500">
+                            <TableHead className="w-[200px] text-white">Pasivos</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2021</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2021</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2022</TableHead>
+                            <TableHead className="w-[70px] text-white text-center">2023</TableHead>                            
+                            <TableHead className="w-[70px] text-white text-center">2024</TableHead>
+                            <TableHead className="w-[70px] text-white text-center"></TableHead>
 
                         </TableRow>
                     </TableHeader>
@@ -440,9 +472,9 @@ export const SouthernBalanceGeneral = () => {
                             return (
                               <Collapsible asChild>
                                 <>
-                                  <TableRow key={bal.Pasivos} className="bg-gray-100 w-full">
+                                  <TableRow key={bal.Pasivos} className="bg-gray-200 w-full">
 
-                                            <TableCell className="font-bold bg-gray-200">{bal.Pasivos}</TableCell>
+                                            <TableCell className="font-bold bg-gray-300">{bal.Pasivos}</TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
@@ -467,8 +499,8 @@ export const SouthernBalanceGeneral = () => {
                                         (bal.Pasivos == "Pasivos Corrientes" || bal.Pasivos == "Pasivos no Corrientes" || bal.Pasivos == "Patrimonio") ? 
                                           ((bal.Pasivos == "Pasivos Corrientes" ? pasivosCorrientes : bal.Pasivos == "Pasivos no Corrientes" ? pasivosNoCorrientes : patrimonio).map((pas) => (
                                             <>
-                                              <TableRow key={pas.Pasivos} className="">
-                                                  <TableCell className="bg-gray-100">{pas.Pasivos}</TableCell>
+                                              <TableRow key={pas.Pasivos} className="bg-gray-100  ">
+                                                  <TableCell className="bg-gray-200">{pas.Pasivos}</TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2020]}</p></div></TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2021]}</p></div></TableCell>
                                                   <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2022]}</p></div></TableCell>
