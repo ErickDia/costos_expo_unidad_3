@@ -13,6 +13,7 @@ import { BuenaBalanceGeneral } from './app/Buenaventura/BuenaBalanceGeneral'
 import { BuenaCuentaResultados } from './app/Buenaventura/BuenaCuentaResultados'
 import { BuenaRatios } from './app/Buenaventura/BuenaRatios'
 import { RatioComparativo } from './app/ratioComparativo/RatioComparativo'
+import { Efes } from './app/EFES/Efes'
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
           <Route path='/buenaCuentaResultados' element={<BuenaCuentaResultados />} />
           <Route path='/buenaRatios' element={<BuenaRatios />} />
           <Route path='/ratioComparativo' element={<RatioComparativo />} />
+          <Route path='/EFES' element={<Efes />} />
+          
 
           {/* <Route path='/clase' element={<Clase_costos />} />
           <Route path='/etapas' element={<Etapas />} />

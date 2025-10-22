@@ -539,7 +539,7 @@ export const SouthernRatios = () => {
           <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300 ">
+                        <TableRow className="">
                             <TableHead className="w-[200px] ">Ratios</TableHead>
                             <TableHead className="w-[70px] text-center"></TableHead>
                             <TableHead className="w-[70px] text-center"></TableHead>
@@ -556,9 +556,9 @@ export const SouthernRatios = () => {
                             return (
                               <Collapsible asChild>
                                 <>
-                                  <TableRow key={bal.SOLVENCIA} className="bg-gray-100 w-full">
+                                  <TableRow key={bal.SOLVENCIA} className=" w-full">
 
-                                            <TableCell className="font-bold bg-gray-200">{bal.SOLVENCIA}</TableCell>
+                                            <TableCell className="font-bold ">{bal.SOLVENCIA}</TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2020]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2021]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2022]}</p></div></TableCell>
@@ -587,12 +587,12 @@ export const SouthernRatios = () => {
                                           bal.SOLVENCIA == "RATIOS OPERATIVOS" ? ratioOperativos : ratioEstructuraBalance).map((act) => (
                                             <>
                                               <TableRow key={act.SOLVENCIA} className="">
-                                                  <TableCell className="bg-gray-100">{act.SOLVENCIA}</TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2020]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2021]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2022]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2023]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2024]}</p></div></TableCell>
+                                                  <TableCell className="font-semibold">{act.SOLVENCIA}</TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p></p><p>{act[2020]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p></p><p>{act[2021]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p></p><p>{act[2022]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p></p><p>{act[2023]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p></p><p>{act[2024]}</p></div></TableCell>
                                               </TableRow>
                                             </>
                                           ))

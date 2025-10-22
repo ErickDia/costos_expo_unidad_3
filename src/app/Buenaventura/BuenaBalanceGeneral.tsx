@@ -335,7 +335,7 @@ export const BuenaBalanceGeneral = () => {
           <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300">
+                        <TableRow className="">
                             <TableHead className="w-[200px]">Activos</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
@@ -353,9 +353,9 @@ export const BuenaBalanceGeneral = () => {
                             return (
                               <Collapsible asChild>
                                 <>
-                                  <TableRow key={bal.Activos} className="bg-gray-100 w-full">
+                                  <TableRow key={bal.Activos} className="w-full">
 
-                                            <TableCell className="font-bold bg-gray-200">{bal.Activos}</TableCell>
+                                            <TableCell className="font-bold ">{bal.Activos}</TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
@@ -381,12 +381,12 @@ export const BuenaBalanceGeneral = () => {
                                           ((bal.Activos == "Activos Corrientes" ? activosCorrientes : activosNoCorrientes).map((act) => (
                                             <>
                                               <TableRow key={act.Activos} className="">
-                                                  <TableCell className="bg-gray-100">{act.Activos}</TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2020]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2021]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2022]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2023]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{act[2024]}</p></div></TableCell>
+                                                  <TableCell className="font-semibold">{act.Activos}</TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{act[2020]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{act[2021]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{act[2022]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{act[2023]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{act[2024]}</p></div></TableCell>
                                                   <TableCell></TableCell>
 
                                               </TableRow>
@@ -408,7 +408,7 @@ export const BuenaBalanceGeneral = () => {
             <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300">
+                        <TableRow className="">
                             <TableHead className="w-[200px]">Pasivos</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
@@ -426,9 +426,9 @@ export const BuenaBalanceGeneral = () => {
                             return (
                               <Collapsible asChild>
                                 <>
-                                  <TableRow key={bal.Pasivos} className="bg-gray-100 w-full">
+                                  <TableRow key={bal.Pasivos} className="w-full">
 
-                                            <TableCell className="font-bold bg-gray-200">{bal.Pasivos}</TableCell>
+                                            <TableCell className="font-bold ">{bal.Pasivos}</TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
                                             <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
@@ -454,12 +454,12 @@ export const BuenaBalanceGeneral = () => {
                                           ((bal.Pasivos == "Pasivos Corrientes" ? pasivosCorrientes : bal.Pasivos == "Pasivos no Corrientes" ? pasivosNoCorrientes : patrimonio).map((pas) => (
                                             <>
                                               <TableRow key={pas.Pasivos} className="">
-                                                  <TableCell className="bg-gray-100">{pas.Pasivos}</TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2020]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2021]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2022]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2023]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{pas[2024]}</p></div></TableCell>
+                                                  <TableCell className="font-semibold">{pas.Pasivos}</TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{pas[2020]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{pas[2021]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{pas[2022]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{pas[2023]}</p></div></TableCell>
+                                                  <TableCell><div className=" flex justify-between pr-2 pl-2 font-semibold"><p>S/.</p><p>{pas[2024]}</p></div></TableCell>
                                                   <TableCell></TableCell>
 
                                               </TableRow>

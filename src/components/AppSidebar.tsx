@@ -10,7 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
-  SidebarMenuSubItem,
+  // SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 
 import {
@@ -171,6 +171,15 @@ export function AppSidebar() {
                   <a href="ratioComparativo">
                     <Book />
                     <span>Ratios Comparativos</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              {/* ratioComparativo */}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="Efes">
+                    <Book />
+                    <span>EFES</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>

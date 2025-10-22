@@ -1007,7 +1007,7 @@ function formatNumber(number : number): string {
   return new Intl.NumberFormat("es-MX").format(number);
 }
 
-export const RatioComparativo = () => {
+export const Efes = () => {
   const [ratio, setRatio] = useState("Solvencia");
   const [souRatio, setsouRatio] = useState<SouRatioKey>("souRatioSolvencia");
   const [bueRatio, setbueRatio] = useState<BueRatioKey>("bueRatioSolvencia");
@@ -1018,9 +1018,9 @@ export const RatioComparativo = () => {
 
   return (
     <LayoutDash>
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Ratio Comparativo (Southern Copper vs Buena Ventura)</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">EFE'S</h2>
       
-      <Card>
+      {/* <Card>
         <CardContent className="flex justify-center p-3 gap-4 flex-wrap">
           <Button variant="outline" onClick={() => {setRatio("Solvencia"); setsouRatio("souRatioSolvencia"); setbueRatio("bueRatioSolvencia"); setSubRatioId(0);}}>Solvencia</Button>
           <Button variant="outline" onClick={() => {setRatio("Liquidez"); setsouRatio("souRatioLiquidez"); setbueRatio("bueRatioLiquidez"); setSubRatioId(0);}}>Liquidez</Button>
@@ -1031,7 +1031,7 @@ export const RatioComparativo = () => {
         </CardContent>
       </Card>
 
-      
+       */}
 
       
         
@@ -1039,17 +1039,8 @@ export const RatioComparativo = () => {
 
         <Card className="mt-5">
             <CardContent className="flex justify-center p-3 gap-2 flex-col">
-              <h2 className="text-xl font-bold text-gray-500 text-center mb-2 mt-1">RATIO DE {ratio.toUpperCase()}</h2>
-              {
-                (ratio === "Solvencia" ? souRatioSolvencia : ratio === "Liquidez" ? souRatioLiquidez : ratio === "Endeudamiento" ? souRatioEndeudamiento : ratio === "Rentabilidad y Márgenes" ? souRatioRentabilidad : ratio === "Ratios Operativos" ? souRatioOperativos : souRatioEstructuraBalance).map((item, index) => (
-                  <Button 
-                    key={item.SOLVENCIA}
-                    variant="outline"
-                    onClick={() => {setSubRatioId(index)}}
-                  >
-                    {item.SOLVENCIA}
-                  </Button>
-                ))}
+              {/* <h2 className="text-xl font-bold text-gray-500 text-center mb-2 mt-1">RATIO DE {ratio.toUpperCase()}</h2> */}
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Total Efectivo - Act. Operación</Button>
             </CardContent>
         </Card>
 

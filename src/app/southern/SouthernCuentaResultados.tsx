@@ -159,12 +159,12 @@ const CuentaResultados = [
 export const SouthernCuentaResultados = () => {
   return (
     <LayoutDash>
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Solvencia</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Cuenta de Resultados</h2>
         <div className='flex justify-center flex-col items-center gap-10'>
           <div className="border rounded-lg shadow-sm w-full">
                 <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300">
+                        <TableRow className="">
                             <TableHead className="w-[200px]">Activos</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
                             <TableHead className="w-[70px] text-center">2021</TableHead>
@@ -180,8 +180,8 @@ export const SouthernCuentaResultados = () => {
 
                             if (bal.EJERCICIOS === "BAI (EBT)" || bal.EJERCICIOS === "Resultado Financiero" || bal.EJERCICIOS === "Margen Bruto" || bal.EJERCICIOS === "EBITDA" || bal.EJERCICIOS === "BAII(EBIT)" || bal.EJERCICIOS === "Resultado Neto") { 
                               return (
-                                <TableRow className="bg-gray-100 w-full">
-                                  <TableCell className="font-bold bg-gray-200">{bal.EJERCICIOS}</TableCell>
+                                <TableRow className="w-full" key={bal.EJERCICIOS}>
+                                  <TableCell className="font-bold">{bal.EJERCICIOS}</TableCell>
                                   <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
                                   <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
                                   <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
@@ -192,12 +192,12 @@ export const SouthernCuentaResultados = () => {
                             } else {
                               return (
                                 <TableRow className="w-full">
-                                  <TableCell className="font-bold bg-gray-100">{bal.EJERCICIOS}</TableCell>
-                                  <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
-                                  <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
-                                  <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
-                                  <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2023]}</p></div></TableCell>
-                                  <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2024]}</p></div></TableCell>
+                                  <TableCell className="font-semibold">{bal.EJERCICIOS}</TableCell>
+                                  <TableCell className="font-semibold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2020]}</p></div></TableCell>
+                                  <TableCell className="font-semibold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2021]}</p></div></TableCell>
+                                  <TableCell className="font-semibold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2022]}</p></div></TableCell>
+                                  <TableCell className="font-semibold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2023]}</p></div></TableCell>
+                                  <TableCell className="font-semibold"><div className=" flex justify-between pr-2 pl-2"><p>S/.</p><p>{bal[2024]}</p></div></TableCell>
                                 </TableRow>
                               )
                             }
