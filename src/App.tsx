@@ -8,6 +8,11 @@ import './App.css'
 import Dashboardedit from './app/dashboard/Dashboardedit'
 import { SouthernBalanceGeneral } from './app/southern/SouthernBalanceGeneral'
 import { SouthernCuentaResultados } from './app/southern/SouthernCuentaResultados'
+import { SouthernRatios } from './app/southern/SouthernRatios'
+import { BuenaBalanceGeneral } from './app/Buenaventura/BuenaBalanceGeneral'
+import { BuenaCuentaResultados } from './app/Buenaventura/BuenaCuentaResultados'
+import { BuenaRatios } from './app/Buenaventura/BuenaRatios'
+import { RatioComparativo } from './app/ratioComparativo/RatioComparativo'
 
 function App() {
 
@@ -16,6 +21,11 @@ function App() {
       <Routes>
           <Route path='/southernBalanceGeneral' element={<SouthernBalanceGeneral />} />
           <Route path='/southernCuentaResultados' element={<SouthernCuentaResultados />} />
+          <Route path='/southernRatios' element={<SouthernRatios />} />
+          <Route path='/buenaBalanceGeneral' element={<BuenaBalanceGeneral />} />
+          <Route path='/buenaCuentaResultados' element={<BuenaCuentaResultados />} />
+          <Route path='/buenaRatios' element={<BuenaRatios />} />
+          <Route path='/ratioComparativo' element={<RatioComparativo />} />
 
           {/* <Route path='/clase' element={<Clase_costos />} />
           <Route path='/etapas' element={<Etapas />} />

@@ -108,11 +108,74 @@ export function AppSidebar() {
                           </a>
                         </SidebarMenuButton>
                       </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="southernRatios">
+                            <Book />
+                            <span>Ratios Financieros</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                  </SidebarMenuItem>
+                </Collapsible>
+              </SidebarMenuItem>
+
+              {/* BuenaVentura */}
+
+              <SidebarMenuItem key="BuenaVentura" className="cursor-pointer">
+                <Collapsible defaultOpen className="group/collapsible">
+                  <SidebarMenuItem>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton asChild>
+                        <span>
+                          <Circle />
+                          <span>Buena Ventura</span>
+                        </span>
+                        
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                        <SidebarMenuSub>
+                          <SidebarMenuButton asChild>
+                            <a href="buenaBalanceGeneral">
+                              <Book />
+                              <span>Balance General</span>
+                            </a>
+                          </SidebarMenuButton>
+                      </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="buenaCuentaResultados">
+                            <Book />
+                            <span>Cuenta de Resultados</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="buenaRatios">
+                            <Book />
+                            <span>Ratios Financieros</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
                     </CollapsibleContent>
                   </SidebarMenuItem>
                 </Collapsible>
               </SidebarMenuItem>
               
+              {/* ratioComparativo */}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="ratioComparativo">
+                    <Book />
+                    <span>Ratios Comparativos</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

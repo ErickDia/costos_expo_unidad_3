@@ -1,14 +1,31 @@
 import LayoutDash from "../LayoutDash"
-import { Table, TableBody, TableRow, TableCell, TableHeader, TableHead } from '@/components/ui/table';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 
-const ratioSolvencia = [
+import { Button } from "@/components/ui/button";
+// import { ArrowUpIcon, ChevronDown } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
+import { Chart } from 'react-chartjs-2';
+import { Chart as ChartJS, BarElement, ArcElement, DoughnutController, CategoryScale, LinearScale, Tooltip, Legend, LineElement, PointElement
+  // ChartData 
+} from "chart.js/auto";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+// import { useEffect, useState } from "react";
+// import { Badge } from "@/components/ui/badge";
+// import { requestApi } from "@/hooks/useRequestApi";
+
+ChartJS.register(
+  BarElement,
+  ArcElement,
+  DoughnutController,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend,
+  LineElement,
+  PointElement
+);
+
+const souRatioSolvencia = [
   {
     "2020": "5.45",
     "2021": "4.35",
@@ -34,7 +51,7 @@ const ratioSolvencia = [
     "SOLVENCIA": "Fondo de Maniobra"
   }
 ]
-const ratioLiquidez = [
+const souRatioLiquidez = [
   {
     "2020": "2.62",
     "2021": "1.66",
@@ -60,7 +77,7 @@ const ratioLiquidez = [
     "SOLVENCIA": "Disponibilidad (D/PC)"
   }
 ]
-const ratioEndeudamiento = [
+const souRatioEndeudamiento = [
   {
     "2020": "0.1834",
     "2021": "0.2297",
@@ -166,7 +183,7 @@ const ratioEndeudamiento = [
     "SOLVENCIA": "Coste de la deuda financiera (kd)"
   }
 ]
-const ratioRentabilidad = [
+const SouRatioRentabilidad = [
 {
     "2020": "19.70%",
     "2021": "37.23%",
@@ -288,7 +305,7 @@ const ratioRentabilidad = [
     "SOLVENCIA": "RCSD"
   }
 ]
-const ratioOperativos = [
+const SouRatioOperativos = [
   {
     "2020": "0.25",
     "2021": "0.37",
@@ -426,7 +443,7 @@ const ratioOperativos = [
     "SOLVENCIA": "(+) EXCEDENTE TESORERÍA (-) RF"
   }
 ]
-const ratioEstructuraBalance = [
+const souRatioEstructuraBalance = [
   {
     "2020": "82%",
     "2021": "77%",
@@ -476,7 +493,7 @@ const ratioEstructuraBalance = [
     "SOLVENCIA": "Peso activos corrientes"
   }
 ]
-const ratios = [
+const souRatios = [
   {
     "2020": "2020",
     "2021": "2021",
@@ -531,86 +548,166 @@ const ratios = [
 ]
 
 
-export const SouthernRatios = () => {
+
+
+export const RatioComparativo = () => {
   return (
     <LayoutDash>
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Ratios</h2>
-        <div className='flex justify-center flex-col items-center gap-10'>
-          <div className="border rounded-lg shadow-sm w-full">
-                <Table className="w-full">
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Ratio Comparativo (Southern Copper vs Buena Ventura)</h2>
+      
+      <Card>
+        <CardContent className="flex justify-center p-3 gap-4 flex-wrap">
+          <Button variant="outline">Solvencia</Button>
+          <Button variant="outline">Liquidez</Button>
+          <Button variant="outline">Endeudamiento</Button>
+          <Button variant="outline">Rentabilidad y Márgenes</Button>
+          <Button variant="outline">Ratios Operativos</Button>
+          <Button variant="outline">Estructura Balance</Button>
+        </CardContent>
+      </Card>
+      
+        <div className="w-full mt-5">
+                <Card className="md:w-[100%] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
+                  <p className="text-center text-2xl font-semibold text-gray-500">FONDO DE MANIOBRA</p>
+                  <Chart type="bar" className="w-full max-h-[550px]" 
+                  data = {{
+                    "labels": [
+                    "2020",
+                    "2021",
+                    "2022",
+                    "2023",
+                    "2024"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Southern Copper Perú",
+                            "data": [
+                            903450,
+                            526776,
+                            920516,
+                            681377,
+                            953470
+                            ],
+                            // "type": "bar",
+                            "type": "line",
+                            "tension": 0.3,
+                            "borderColor": "rgba(122, 9, 33, 1)",
+                            "pointRadius": 2,
+                            "backgroundColor": "rgba(122, 9, 33, 0.54)",
+                            "borderWidth": 2
+                        },
+                        {
+                            "label": "Buena Ventura",
+                            "type": "line",
+                            "data": [
+                              93517,	-167808,	108039,	9242,	170447
+                            ],
+                            "borderColor": "rgba(11, 100, 164, 1)",
+                            "backgroundColor": "rgba(11, 100, 164, 0.52)",
+                            "borderWidth": 2,
+                            "tension": 0.3,
+                            "pointRadius": 2
+                        }
+                    ]
+                  }} 
+                  options = {{
+                          responsive: true,
+                          maintainAspectRatio: false, 
+                          interaction: {
+                            mode: 'nearest',   // Busca el punto más cercano
+                            axis: 'x',         // O 'xy' si quieres que considere ambos ejes
+                            intersect: false,  // No exige que el cursor esté justo sobre el punto
+                          },
+                          scales: {
+                            x: {
+                              ticks: {
+                                maxTicksLimit: 10, 
+                                autoSkip: false,// Limita el número de etiquetas en el eje X
+                              },
+                            },
+                          },
+                          plugins: {
+                            legend: {
+                              display: true,
+                              position: 'top'
+                            },
+                            tooltip: {
+                              enabled: true,  // Asegura que el tooltip esté activo
+                              mode: 'nearest',
+                              intersect: false,
+                              callbacks: {
+                                // Puedes personalizar lo que se muestra en el tooltip
+                                label: function (context) {
+                                  const value = context.parsed.y.toLocaleString('es-PE');
+                                  return `${context.dataset.label}: ${value}`;
+                                },
+                              },
+                            },
+                          }
+                        }}/>
+                </Card>
+
+        </div>
+        <Card className="mt-5">
+          <CardContent className="flex justify-center p-3 gap-4 flex-wrap">
+            <Button variant="outline">Fondo de Maniobra</Button>
+            <Button variant="outline">Ratio de Garantía (Activo / Pasivo)</Button>
+            <Button variant="outline">Ratio Fondo Maniobra (FM / PC)</Button>
+          </CardContent>
+      </Card>
+      <div className="flex gap-4">
+
+      <Card className="mt-5 p-4 w-full">
+        
+        <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gray-300 ">
-                            <TableHead className="w-[200px] ">Ratios</TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>                            
-                            <TableHead className="w-[70px] text-center"></TableHead>
-                            <TableHead className="w-[70px] text-center"></TableHead>
+                        <TableRow className="">
+                            <TableHead className="w-[70px] ">Ratios</TableHead>
+                            <TableHead className="w-[70px] text-center">2020</TableHead>
+                            <TableHead className="w-[70px] text-center">2021</TableHead>
+                            <TableHead className="w-[70px] text-center">2022</TableHead>
+                            <TableHead className="w-[70px] text-center">2023</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {
-                          ratios.map((bal) => {
+                      <TableRow key="0" className=" w-full">
 
-                            return (
-                              <Collapsible asChild>
-                                <>
-                                  <TableRow key={bal.SOLVENCIA} className="bg-gray-100 w-full">
-
-                                            <TableCell className="font-bold bg-gray-200">{bal.SOLVENCIA}</TableCell>
-                                            <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2020]}</p></div></TableCell>
-                                            <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2021]}</p></div></TableCell>
-                                            <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2022]}</p></div></TableCell>
-                                            <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2023]}</p></div></TableCell>
-                                            <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>{bal[2024]}</p></div></TableCell>
-                                            <TableCell>
-                                              
-                                                
-                                                  <CollapsibleTrigger asChild>
-                                                    <Button variant="ghost" size="sm">
-                                                      <ChevronDown className="h-4 w-4 transition-transform data-[state=open]:rotate-180" />
-                                                    </Button>
-                                                  </CollapsibleTrigger>
-                                                
-                                              
-                                            </TableCell>
-                                  </TableRow>
-                                  <CollapsibleContent asChild>
-                                    <>
-                                      {
-                                        
-                                          (bal.SOLVENCIA == "SOLVENCIA" ? ratioSolvencia : 
-                                            bal.SOLVENCIA == "LIQUIDEZ" ? ratioLiquidez : 
-                                          bal.SOLVENCIA == "ENDEUDAMIENTO" ? ratioEndeudamiento : 
-                                          bal.SOLVENCIA == "RENTABILIDAD Y MÁRGENES" ? ratioRentabilidad : 
-                                          bal.SOLVENCIA == "RATIOS OPERATIVOS" ? ratioOperativos : ratioEstructuraBalance).map((act) => (
-                                            <>
-                                              <TableRow key={act.SOLVENCIA} className="">
-                                                  <TableCell className="bg-gray-100">{act.SOLVENCIA}</TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2020]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2021]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2022]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2023]}</p></div></TableCell>
-                                                  <TableCell><div className=" flex justify-between pr-2 pl-2"><p></p><p>{act[2024]}</p></div></TableCell>
-                                              </TableRow>
-                                            </>
-                                          ))
-                                        
-                                      }
-                                    </>  
-                                  </CollapsibleContent>
-                                </>
-                              </Collapsible>
-                            )
-                          })
-                        }
-
+                          <TableCell className="font-bold">Fondo de Maniobra</TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2020</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2021</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2022</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2023</p></div></TableCell>
+                      </TableRow>
                     </TableBody>
                 </Table>
-            </div>
-        </div>
-        
+
+                
+      </Card>
+      <Card  className="mt-5 p-4 w-full">
+        <Table className="w-full">
+                    <TableHeader>
+                        <TableRow className="">
+                            <TableHead className="w-[70px] ">Ratios</TableHead>
+                            <TableHead className="w-[70px] text-center">awdwa</TableHead>
+                            <TableHead className="w-[70px] text-center">awda</TableHead>
+                            <TableHead className="w-[70px] text-center">awdwa</TableHead>
+                            <TableHead className="w-[70px] text-center">awda</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow key="0" className=" w-full">
+
+                          <TableCell className="font-bold">2020</TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2020</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2021</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2022</p></div></TableCell>
+                          <TableCell className="font-bold"><div className=" flex justify-between pr-2 pl-2"><p></p><p>2023</p></div></TableCell>
+                      </TableRow>
+                    </TableBody>
+                </Table>
+      </Card>
+      </div>
+
     </LayoutDash>
   )
 }
