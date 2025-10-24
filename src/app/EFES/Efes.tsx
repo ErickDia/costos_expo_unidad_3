@@ -520,482 +520,706 @@ const souRatios: Record<SouRatioKey, { [year: string]: string }[]> = {
   souRatioEstructuraBalance
 };
 
-const bueRatioSolvencia = [
+const efes = [
   {
-    "2020": "5.31",
-    "2021": "2.64",
-    "2022": "4.58",
-    "2023": "4.24",
-    "2024": "4.29",
-    "SOLVENCIA": "Ratio de Garantía (Activo / Pasivo)"
+    efe: "Total Efectivo - Act. Operación",
+    southern: {
+      result: [1369836, 2, 222312, 1399005, 1845683, 2049456],
+      data: [
+      {
+        "2020": "",
+        "2021": "",
+        "2022": "",
+        "2023": "",
+        "2024": "",
+        "Ejercicio": "Ingresos:"
+      },
+      {
+        "2020": "3,024,870",
+        "2021": "4,165,165",
+        "2022": "4,013,896",
+        "2023": "3,863,902",
+        "2024": "4,632,925",
+        "Ejercicio": "Venta de bienes"
+      },
+      {
+        "2020": "4,740",
+        "2021": "27,225",
+        "2022": "28,780",
+        "2023": "53,808",
+        "2024": "47,588",
+        "Ejercicio": "Otras actividades de operación"
+      },
+      {
+        "2020": "",
+        "2021": "",
+        "2022": "",
+        "2023": "",
+        "2024": "",
+        "Ejercicio": "Egresos:"
+      },
+      {
+        "2020": "-894,290",
+        "2021": "-762,117",
+        "2022": "-1,296,583",
+        "2023": "-1,148,543",
+        "2024": "-1,348,274",
+        "Ejercicio": "Proveedores de bienes y servicios"
+      },
+      {
+        "2020": "-299,742",
+        "2021": "-354,693",
+        "2022": "-396,285",
+        "2023": "-342,793",
+        "2024": "-443,825",
+        "Ejercicio": "Pagos a / y por cuenta de los empleados"
+      },
+      {
+        "2020": "-286,301",
+        "2021": "-534,261",
+        "2022": "-688,630",
+        "2023": "-309,767",
+        "2024": "-527,636",
+        "Ejercicio": "Impuesto a las ganancias"
+      },
+      {
+        "2020": "-38,792",
+        "2021": "-99,663",
+        "2022": "-71,978",
+        "2023": "-70,253",
+        "2024": "-84,659",
+        "Ejercicio": "Impuesto especial a la minería"
+      },
+      {
+        "2020": "-42,999",
+        "2021": "-126,392",
+        "2022": "-90,738",
+        "2023": "-84,178",
+        "2024": "-100,642",
+        "Ejercicio": "Regalías mineras"
+      },
+      {
+        "2020": "-97,650",
+        "2021": "-92,952",
+        "2022": "-99,457",
+        "2023": "-116,493",
+        "2024": "-126,021",
+        "Ejercicio": "Otras actividades de operación"
+      }
+      ]
+    },
+    buenaventura: {
+      result: [74964,	-359607,	286560,	119104,	468682],
+      data: [
+    {
+      "2020": "",
+      "2021": "",
+      "2022": "",
+      "2023": "",
+      "2024": "",
+      "Ejercicio": "Ingresos:"
+    },
+    {
+      "2020": "396,413",
+      "2021": "428,683",
+      "2022": "350,097",
+      "2023": "315,317",
+      "2024": "635,709",
+      "Ejercicio": "Cobranza de ventas"
+    },
+    {
+      "2020": "28,013",
+      "2021": "158,641",
+      "2022": "331,795",
+      "2023": "170,859",
+      "2024": "299,819",
+      "Ejercicio": "Cobranza de dividendos de partes relacionadas"
+    },
+    {
+      "2020": "19,168",
+      "2021": "14,779",
+      "2022": "22,349",
+      "2023": "27,389",
+      "2024": "32,029",
+      "Ejercicio": "Cobranza por solicitud de devolución de impuestos"
+    },
+    {
+      "2020": "1,321",
+      "2021": "1,147",
+      "2022": "1,662",
+      "2023": "2,625",
+      "2024": "3,762",
+      "Ejercicio": "Cobranza de intereses"
+    },
+    {
+      "2020": "2,500",
+      "2021": "3,350",
+      "2022": "0",
+      "2023": "150",
+      "2024": "1,150",
+      "Ejercicio": "Cobranza de dividendos de otras inversiones"
+    },
+    {
+      "2020": "",
+      "2021": "",
+      "2022": "",
+      "2023": "",
+      "2024": "",
+      "Ejercicio": "Egresos:"
+    },
+    {
+      "2020": "-21,948",
+      "2021": "-304,812",
+      "2022": "-276,328",
+      "2023": "-245,816",
+      "2024": "-292,814",
+      "Ejercicio": "Pagos a proveedores y terceros, y otros, neto"
+    },
+    {
+      "2020": "-73,534",
+      "2021": "-72,774",
+      "2022": "-66,288",
+      "2023": "-76,701",
+      "2024": "-107,013",
+      "Ejercicio": "Pagos a y por cuenta de los empleados"
+    },
+    {
+      "2020": "-10,432",
+      "2021": "-6,189",
+      "2022": "-33,163",
+      "2023": "-30,857",
+      "2024": "-30,250",
+      "Ejercicio": "Pago de intereses"
+    },
+    {
+      "2020": "-7,639",
+      "2021": "-17,225",
+      "2022": "-16,187",
+      "2023": "-18,192",
+      "2024": "-31,980",
+      "Ejercicio": "Pagos de arrendamiento a bajo valor y corto plazo"
+    },
+    {
+      "2020": "-6,157",
+      "2021": "-9,029",
+      "2022": "-13,284",
+      "2023": "-9,296",
+      "2024": "-18,939",
+      "Ejercicio": "Pagos de impuestos a las ganancias y regalías al Estado Peruano"
+    },
+    {
+      "2020": "-6,180",
+      "2021": "-6,970",
+      "2022": "-11,053",
+      "2023": "-12,832",
+      "2024": "-15,832",
+      "Ejercicio": "Pago de regalías a terceros"
+    },
+    {
+      "2020": "-246,561",
+      "2021": "-549,208",
+      "2022": "-3,040",
+      "2023": "-3,542",
+      "2024": "-6,959",
+      "Ejercicio": "Pagos por embargos y desembolsos por procesos tributarios"
+    }
+  ]
+    }
+    
   },
   {
-    "2020": "0.49",
-    "2021": "-0.32",
-    "2022": "0.65",
-    "2023": "0.04",
-    "2024": "0.52",
-    "SOLVENCIA": "Ratio Fondo Maniobra (FM / PC)"
+    efe: "Total Efectivo - Act. De Inversión",
+    southern: {
+      result: [-348976, -786275, -602608, -740816, -578300],
+      data: [
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Ingresos:"
+        },
+        {
+          "2020": "163,771",
+          "2021": "12",
+          "2022": "14",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Amortización de deuda de entidad relacionada"
+        },
+        {
+          "2020": "138",
+          "2021": "124",
+          "2022": "476",
+          "2023": "389",
+          "2024": "275",
+          "Ejercicio": "Venta de propiedades, planta y equipo"
+        },
+        {
+          "2020": "4,027",
+          "2021": "12,491",
+          "2022": "885",
+          "2023": "442",
+          "2024": "2,672",
+          "Ejercicio": "Dividendos de asociada"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Egresos:"
+        },
+        {
+          "2020": "-190,512",
+          "2021": "-312,546",
+          "2022": "-334,609",
+          "2023": "-309,801",
+          "2024": "-261,563",
+          "Ejercicio": "Compra de propiedades, planta y equipo"
+        },
+        {
+          "2020": "-1,457",
+          "2021": "-2,809",
+          "2022": "-987",
+          "2023": "-2,003",
+          "2024": "-499",
+          "Ejercicio": "Aportes en subsidiarias"
+        },
+        {
+          "2020": "-5",
+          "2021": "-12",
+          "2022": "-14",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Préstamos otorgados a entidad relacionada"
+        },
+        {
+          "2020": "-323,948",
+          "2021": "-470,709",
+          "2022": "-267,869",
+          "2023": "-429,217",
+          "2024": "-318,571",
+          "Ejercicio": "Aumento de concesiones mineras, desbroce y desarrollo"
+        },
+        {
+          "2020": "-990",
+          "2021": "-326",
+          "2022": "-504",
+          "2023": "-626",
+          "2024": "-614",
+          "Ejercicio": "Aumento de activos intangibles"
+        },
+        {
+          "2020": "0",
+          "2021": "-12,500",
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Aumento de otros activos"
+        }
+      ]
+    },
+    buenaventura: {
+      result: [-55408, -24089, -32242, -152388, -247339],
+      data: [
+
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Ingresos:"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "45,000",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Cobranza por compra de acciones de La Zanja"
+        },
+        {
+          "2020": "2,259",
+          "2021": "559",
+          "2022": "6,586",
+          "2023": "1,140",
+          "2024": "1,912",
+          "Ejercicio": "Cobranza por venta de propiedad, planta y equipo a terceros"
+        },
+        {
+          "2020": "15,000",
+          "2021": "20,000",
+          "2022": "2,677",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Cobranza por préstamo a relacionadas"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "1,577",
+          "2023": "245",
+          "2024": "534",
+          "Ejercicio": "Cobranza adicional por venta de inversiones"
+        },
+        {
+          "2020": "190",
+          "2021": "224",
+          "2022": "280",
+          "2023": "249",
+          "2024": "27",
+          "Ejercicio": "Cobranza por venta de propiedad, planta y equipo a relacionadas"
+        },
+        {
+          "2020": "",
+          "2021": "3,640",
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Cobranza por venta de acciones en subsidiarias"
+        },
+        {
+          "2020": "-",
+          "2021": "-",
+          "2022": "-",
+          "2023": "0",
+          "2024": "70,000",
+          "Ejercicio": "Cobranza por venta de acciones de subsidiaria Chaupiloma Dos de Cajamarca S.C.R.L."
+        },
+        {
+          "2020": "-",
+          "2021": "-",
+          "2022": "-",
+          "2023": "27,003",
+          "2024": "1,060",
+          "Ejercicio": "Cobranza por venta de acciones de subsidiaria Contacto Corredores de Seguros S.A."
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Egresos:"
+        },
+        {
+          "2020": "-31,126",
+          "2021": "-40,707",
+          "2022": "-75,552",
+          "2023": "-154,341",
+          "2024": "-286,482",
+          "Ejercicio": "Pagos por adquisiciones de propiedad, planta y equipo"
+        },
+        {
+          "2020": "-16,807",
+          "2021": "-7,400",
+          "2022": "-12,432",
+          "2023": "-22,879",
+          "2024": "-31,884",
+          "Ejercicio": "Aportes en subsidiarias y asociadas"
+        },
+        {
+          "2020": "-1,471",
+          "2021": "-343",
+          "2022": "-263",
+          "2023": "-3,805",
+          "2024": "-2,506",
+          "Ejercicio": "Pagos por adquisiciones de otros activos"
+        },
+        {
+          "2020": "-10,000",
+          "2021": "",
+          "2022": "-115",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Pagos de préstamos otorgados a relacionadas"
+        },
+        {
+          "2020": "-13,453",
+          "2021": "-62",
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Pagos por compra de acciones en subsidiarias y asociadas"
+        }
+      ]
+    }
   },
   {
-    "2020": "93517",
-    "2021": "-167808",
-    "2022": "108039",
-    "2023": "9242",
-    "2024": "170447",
-    "SOLVENCIA": "Fondo de Maniobra"
+    efe: "Total Efectivo - Act. Financiamiento",
+    southern: {
+      result: [-799719, -1758647, -727634, -1193099, -1101244 ],
+      data: [
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Ingresos:"
+        },
+        {
+          "2020": "1,052",
+          "2021": "100",
+          "2022": "1,586",
+          "2023": "865",
+          "2024": "1,025",
+          "Ejercicio": "Devolución de dividendos no cobrados"
+        },
+        {
+          "2020": "0",
+          "2021": "391,151",
+          "2022": "54,340",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Préstamo recibidos"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Egresos:"
+        },
+        {
+          "2020": "-760,864",
+          "2021": "-1,711,668",
+          "2022": "-641,438",
+          "2023": "-1,139,286",
+          "2024": "-1,041,734",
+          "Ejercicio": "Dividendos a accionistas de inversión y remesas a casa matriz"
+        },
+        {
+          "2020": "-31,286",
+          "2021": "-37,857",
+          "2022": "-9,734",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Impuesto a los dividendos remitidos a accionistas no domiciliados"
+        },
+        {
+          "2020": "-8,621",
+          "2021": "-9,222",
+          "2022": "-78,048",
+          "2023": "-9,586",
+          "2024": "-8,579",
+          "Ejercicio": "Pasivo por arrendamientos"
+        },
+        {
+          "2020": "0",
+          "2021": "-391,151",
+          "2022": "-54,340",
+          "2023": "-45,092",
+          "2024": "-51,956",
+          "Ejercicio": "Pago de préstamo recibido"
+        }
+      ]
+    },
+    buenaventura: {
+      result: [-4342, 533992, -348533, -22823, -23423],
+      data: [
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Actividades de Financiamiento"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Ingresos:"
+        },
+        {
+          "2020": "0",
+          "2021": "539,300",
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Emisión de bonos Senior Notes, neto de costos de emisión"
+        },
+        {
+          "2020": "0",
+          "2021": "50,000",
+          "2022": "0",
+          "2023": "49,000",
+          "2024": "0",
+          "Ejercicio": "Obtención de préstamos bancarios"
+        },
+        {
+          "2020": "",
+          "2021": "",
+          "2022": "",
+          "2023": "",
+          "2024": "",
+          "Ejercicio": "Egresos:"
+        },
+        {
+          "2020": "0",
+          "2021": "0",
+          "2022": "-275,000",
+          "2023": "0",
+          "2024": "0",
+          "Ejercicio": "Pago de obligaciones financieras"
+        },
+        {
+          "2020": "0",
+          "2021": "-50,000",
+          "2022": "-50,000",
+          "2023": "-49,000",
+          "2024": "0",
+          "Ejercicio": "Pago de préstamos bancarios"
+        },
+        {
+          "2020": "0",
+          "2021": "0",
+          "2022": "-18,542",
+          "2023": "-18,542",
+          "2024": "-20,011",
+          "Ejercicio": "Pago de dividendos a propietarios"
+        },
+        {
+          "2020": "-4,342",
+          "2021": "-5,308",
+          "2022": "-4,991",
+          "2023": "-4,281",
+          "2024": "-3,412",
+          "Ejercicio": "Pagos de arrendamientos"
+        }
+      ]
+    }
   },
-]
-const bueRatioLiquidez = [
   {
-    "2020": "1.49",
-    "2021": "0.68",
-    "2022": "1.65",
-    "2023": "1.04",
-    "2024": "1.52",
-    "SOLVENCIA": "Liquidez general (AC/PC)"
+    efe: "Variación de Efec. Y Equi. Efect en el Año",
+    southern: {
+      result: [221141, -322610, 68763, -88232, 369912],
+      data: [
+        {
+          "2020": "1,369,836",
+          "2021": "2,222,312",
+          "2022": "1,399,005",
+          "2023": "1,845,683",
+          "2024": "2,049,456",
+          "Ejercicio": "Total Efectivo - Act. Operación"
+        },
+        {
+          "2020": "-348,976",
+          "2021": "-786,275",
+          "2022": "-602,608",
+          "2023": "-740,816",
+          "2024": "-578,300",
+          "Ejercicio": "Total Efectivo - Act. De Inversión"
+        },
+        {
+          "2020": "-799,719",
+          "2021": "-1,758,647",
+          "2022": "-727,634",
+          "2023": "-1,193,099",
+          "2024": "-1,101,244",
+          "Ejercicio": "Total Efectivo - Act. Financiamiento"
+        }
+      ]
+    },
+    buenaventura: {
+      result: [15214, 150296, -94215, -56107, 197920],
+      data: [
+        {
+          "2020": "74,964",
+          "2021": "-359,607",
+          "2022": "286,560",
+          "2023": "119,104",
+          "2024": "468,682",
+          "Ejercicio": "Total Efectivo - Act. Operación"
+        },
+        {
+          "2020": "-55,408",
+          "2021": "-24,089",
+          "2022": "-32,242",
+          "2023": "-152,388",
+          "2024": "-247,339",
+          "Ejercicio": "Total Efectivo - Act. De Inversión"
+        },
+        {
+          "2020": "-4,342",
+          "2021": "533,992",
+          "2022": "-348,533",
+          "2023": "-22,823",
+          "2024": "-23,423",
+          "Ejercicio": "Total Efectivo - Act. Financiamiento"
+        }
+      ]
+    }
   },
   {
-    "2020": "1.30",
-    "2021": "0.62",
-    "2022": "1.41",
-    "2023": "0.89",
-    "2024": "1.39",
-    "SOLVENCIA": "Liquidez estricta (AC-E)/PC"
+    efe: "Efectivo y Equivalente de Efecto a inicio de Año",
+    southern: {
+      result: [367886, 589027, 266417, 335180, 246948],
+      data: [
+        {
+          "2020": "367,886",
+          "2021": "589,027",
+          "2022": "266,417",
+          "2023": "335,180",
+          "2024": "246,948",
+          "Ejercicio": "Efectivo y Equivalente de Efecto a inicio de Año"
+        }
+      ]
+    },
+    buenaventura: {
+      result: [53757, 68971, 219267, 125052, 68945],
+      data: [
+        {
+          "2020": "53,757",
+          "2021": "68,971",
+          "2022": "219,267",
+          "2023": "125,052",
+          "2024": "68,945",
+          "Ejercicio": "Efectivo y Equivalente de Efecto a inicio de Año"
+        }
+      ]
+    }
   },
   {
-    "2020": "0.36",
-    "2021": "0.41",
-    "2022": "0.75",
-    "2023": "0.26",
-    "2024": "0.82",
-    "SOLVENCIA": "Disponibilidad (D/PC)"
+    efe: "Efectivo al Final del Período",
+    southern: {
+      result: [589027, 266417, 335180, 246948, 616860],
+      data: [
+        {
+          "2020": "589,027",
+          "2021": "266,417",
+          "2022": "335,180",
+          "2023": "246,948",
+          "2024": "616,860",
+          "Ejercicio": "Efectivo al Final del Período"
+        }
+      ]
+    },
+    buenaventura: {
+      result: [68971, 219267, 125052, 68945, 266865],
+      data: [
+        {
+          "2020": "68,971",
+          "2021": "219,267",
+          "2022": "125,052",
+          "2023": "68,945",
+          "2024": "266,865",
+          "Ejercicio": "Efectivo al Final del Período"
+        }
+      ]
+    }
   }
 ]
-const bueRatioEndeudamiento = [
-  {
-    "2020": "0.19",
-    "2021": "0.38",
-    "2022": "0.22",
-    "2023": "0.24",
-    "2024": "0.23",
-    "SOLVENCIA": "Utilización Deuda (P/(P+PN))"
-  },
-  {
-    "2020": "1.23",
-    "2021": "1.61",
-    "2022": "1.28",
-    "2023": "1.31",
-    "2024": "1.30",
-    "SOLVENCIA": "IAP"
-  },
-  {
-    "2020": "0.81",
-    "2021": "0.62",
-    "2022": "0.78",
-    "2023": "0.76",
-    "2024": "0.77",
-    "SOLVENCIA": "Autonomía Financiera (PN/(P+PN))"
-  },
-  {
-    "2020": "0.23",
-    "2021": "0.61",
-    "2022": "0.28",
-    "2023": "0.31",
-    "2024": "0.30",
-    "SOLVENCIA": "Endeudamiento General (P/PN)"
-  },
-  {
-    "2020": "0.16",
-    "2021": "0.38",
-    "2022": "0.22",
-    "2023": "0.22",
-    "2024": "0.21",
-    "SOLVENCIA": "Endeudamiento L/p (PNC/PN)"
-  },
-  {
-    "2020": "0.07",
-    "2021": "0.22",
-    "2022": "0.06",
-    "2023": "0.09",
-    "2024": "0.10",
-    "SOLVENCIA": "Endeudamiento C/p (PC/PN)"
-  },
-  {
-    "2020": "0.31",
-    "2021": "0.37",
-    "2022": "0.20",
-    "2023": "0.28",
-    "2024": "0.32",
-    "SOLVENCIA": "Calidad deuda (PC/P)"
-  },
-  {
-    "2020": "0.13",
-    "2021": "0.35",
-    "2022": "0.18",
-    "2023": "0.18",
-    "2024": "0.16",
-    "SOLVENCIA": "Endeudamiento bancario"
-  },
-  {
-    "2020": "-0.05",
-    "2021": "-0.12",
-    "2022": "0.82",
-    "2023": "0.11",
-    "2024": "0.47",
-    "SOLVENCIA": "Capacidad ec. devolución deuda (FCE/P)"
-  },
-  {
-    "2020": "6.96",
-    "2021": "11.73",
-    "2022": "11.83",
-    "2023": "28.98",
-    "2024": "7.85",
-    "SOLVENCIA": "Carga Financiera (GF/V)"
-  },
-  {
-    "2020": "13.17",
-    "2021": "-6.28",
-    "2022": "-38.66",
-    "2023": "-78.67",
-    "2024": "32.04",
-    "SOLVENCIA": "Apalancamiento financiero"
-  },
-  {
-    "2020": "-3.57",
-    "2021": "-2.03",
-    "2022": "-1.48",
-    "2023": "-0.10",
-    "2024": "3.80",
-    "SOLVENCIA": "Cobertura de gastos financieros (BAII/GF)"
-  },
-  {
-    "2020": "7.24",
-    "2021": "5.70",
-    "2022": "7.39",
-    "2023": "18.87",
-    "2024": "9.45",
-    "SOLVENCIA": "Coste de la deuda financiera (kd)"
-  }
-]
-const bueRatioRentabilidad = [
-{
-    "2020": "-0.03",
-    "2021": "-0.03",
-    "2022": "-0.02",
-    "2023": "0.00",
-    "2024": "0.04",
-    "SOLVENCIA": "ROA"
-  },
-  {
-    "2020": "-0.12",
-    "2021": "-0.23",
-    "2022": "0.52",
-    "2023": "0.02",
-    "2024": "0.35",
-    "SOLVENCIA": "ROE"
-  },
-  {
-    "2020": "-0.25",
-    "2021": "-0.24",
-    "2022": "-0.18",
-    "2023": "-0.03",
-    "2024": "0.30",
-    "SOLVENCIA": "Margen Explotac."
-  },
-  {
-    "2020": "0.11",
-    "2021": "0.11",
-    "2022": "0.09",
-    "2023": "0.09",
-    "2024": "0.15",
-    "SOLVENCIA": "Rotación Activo"
-  },
-  {
-    "2020": "-0.35",
-    "2021": "0.16",
-    "2022": "0.61",
-    "2023": "0.22",
-    "2024": "1.44",
-    "SOLVENCIA": "Dupont (ROA x apalancamiento fin.)"
-  },
-  {
-    "2020": "0.22",
-    "2021": "0.16",
-    "2022": "0.24",
-    "2023": "0.26",
-    "2024": "0.43",
-    "SOLVENCIA": "Margen Bruto"
-  },
-  {
-    "2020": "0.07",
-    "2021": "0.04",
-    "2022": "0.09",
-    "2023": "0.11",
-    "2024": "0.33",
-    "SOLVENCIA": "EBITDA"
-  },
-  {
-    "2020": "-9.88",
-    "2021": "-8.24",
-    "2022": "-8.96",
-    "2023": "-19.15",
-    "2024": "-4.95",
-    "SOLVENCIA": "Margen Financiero Activos (ROA-Kd)"
-  },
-  {
-    "2020": "-88502",
-    "2021": "-58134",
-    "2022": "-37324",
-    "2023": "-40619",
-    "2024": "131279",
-    "SOLVENCIA": "NOPAT (BAII - impuestos)"
-  },
-  {
-    "2020": "-28440",
-    "2021": "-167687",
-    "2022": "688248",
-    "2023": "97978",
-    "2024": "484567",
-    "SOLVENCIA": "Cash Flow Económico"
-  },
-  {
-    "2020": "-5952",
-    "2021": "-125720",
-    "2022": "716906",
-    "2023": "198760",
-    "2024": "531123",
-    "SOLVENCIA": "Cash Flow Bruto"
-  },
-  {
-    "2020": "-2557386",
-    "2021": "-383869",
-    "2022": "-33177",
-    "2023": "-2244",
-    "2024": "-182678",
-    "SOLVENCIA": "CAPEX"
-  },
-  {
-    "2020": "0",
-    "2021": "0",
-    "2022": "0",
-    "2023": "0",
-    "2024": "0",
-    "SOLVENCIA": "Cambios en capital corriente"
-  },
-  {
-    "2020": "-2563338",
-    "2021": "-509589",
-    "2022": "683729",
-    "2023": "196516",
-    "2024": "348445",
-    "SOLVENCIA": "Free Cash Flow"
-  },
-  {
-    "2020": "0.32",
-    "2021": "0.15",
-    "2022": "0.77",
-    "2023": "0.40",
-    "2024": "4.24",
-    "SOLVENCIA": "RCSD"
-  }
-]
-const bueRatioOperativos = [
-  {
-    "2020": "0.116137151",
-    "2021": "0.117842436",
-    "2022": "0.096756129",
-    "2023": "0.098347185",
-    "2024": "0.169726777",
-    "SOLVENCIA": "Rotación ANC"
-  },
-  {
-    "2020": "1.21",
-    "2021": "1.12",
-    "2022": "1.26",
-    "2023": "1.33",
-    "2024": "1.34",
-    "SOLVENCIA": "Rotación AC"
-  },
-  {
-    "2020": "-0.04",
-    "2021": "-0.07",
-    "2022": "0.16",
-    "2023": "0.01",
-    "2024": "0.09",
-    "SOLVENCIA": "Rotacion de Activos totales"
-  },
-  {
-    "2020": "-0.09",
-    "2021": "-0.17",
-    "2022": "0.39",
-    "2023": "0.01",
-    "2024": "0.21",
-    "SOLVENCIA": "Rotación de Activo Fijo"
-  },
-  {
-    "2020": "-0.021",
-    "2021": "-0.037",
-    "2022": "0.084",
-    "2023": "0.003",
-    "2024": "0.052",
-    "SOLVENCIA": "Rotación de Activo Circulante"
-  },
-  {
-    "2020": "0.30",
-    "2021": "0.30",
-    "2022": "0.29",
-    "2023": "0.30",
-    "2024": "0.29",
-    "SOLVENCIA": "PMV"
-  },
-  {
-    "2020": "6.71",
-    "2021": "9.71",
-    "2022": "7.21",
-    "2023": "6.79",
-    "2024": "9.39",
-    "SOLVENCIA": "Rotación de Inventarios"
-  },
-  {
-    "2020": "141.64",
-    "2021": "89.62",
-    "2022": "77.30",
-    "2023": "92.66",
-    "2024": "72.62",
-    "SOLVENCIA": "PMC"
-  },
-  {
-    "2020": "-0.85",
-    "2021": "-2.21",
-    "2022": "6.87",
-    "2023": "0.18",
-    "2024": "2.54",
-    "SOLVENCIA": "Rotación de CxC"
-  },
-  {
-    "2020": "141.94",
-    "2021": "89.91",
-    "2022": "77.59",
-    "2023": "92.96",
-    "2024": "72.91",
-    "SOLVENCIA": "PMME"
-  },
-  {
-    "2020": "98.63",
-    "2021": "101.67",
-    "2022": "141.71",
-    "2023": "184.01",
-    "2024": "190.38",
-    "SOLVENCIA": "PMP"
-  },
-  {
-    "2020": "43.31",
-    "2021": "-11.75",
-    "2022": "-64.12",
-    "2023": "-91.05",
-    "2024": "-117.47",
-    "SOLVENCIA": "PMMF"
-  },
-  {
-    "2020": "52675",
-    "2021": "-47374",
-    "2022": "-36491",
-    "2023": "-85260",
-    "2024": "-99350",
-    "SOLVENCIA": "NOF"
-  },
-  {
-    "2020": "93517",
-    "2021": "-167808",
-    "2022": "108039",
-    "2023": "9242",
-    "2024": "170447",
-    "SOLVENCIA": "Fondo de Maniobra"
-  },
-  {
-    "2020": "-40842",
-    "2021": "120434",
-    "2022": "-144530",
-    "2023": "-94502",
-    "2024": "-269797",
-    "SOLVENCIA": "NRN"
-  },
-  {
-    "2020": "4341",
-    "2021": "45550",
-    "2022": "4102",
-    "2023": "3326",
-    "2024": "2474",
-    "SOLVENCIA": "RNC"
-  },
-  {
-    "2020": "45183",
-    "2021": "-74884",
-    "2022": "148632",
-    "2023": "97828",
-    "2024": "272271",
-    "SOLVENCIA": "(+) EXCEDENTE TESORERÍA (-) RF"
-  }
-]
-const bueRatioEstructuraBalance = [
-  {
-    "2020": "81",
-    "2021": "62",
-    "2022": "78",
-    "2023": "76",
-    "2024": "77",
-    "SOLVENCIA": "Peso Patrimonio Neto"
-  },
-  {
-    "2020": "13",
-    "2021": "24",
-    "2022": "18",
-    "2023": "17",
-    "2024": "16",
-    "SOLVENCIA": "Peso Pasivo No corriente"
-  },
-  {
-    "2020": "6",
-    "2021": "14",
-    "2022": "4",
-    "2023": "7",
-    "2024": "7",
-    "SOLVENCIA": "Peso Pasivo Corriente"
-  },
-  {
-    "2020": "89",
-    "2021": "69",
-    "2022": "84",
-    "2023": "82",
-    "2024": "86",
-    "SOLVENCIA": "Ratio de cobertura del inmovilizado"
-  },
-  {
-    "2020": "91",
-    "2021": "90",
-    "2022": "93",
-    "2023": "93",
-    "2024": "89",
-    "SOLVENCIA": "Peso activos no corrientes"
-  },
-  {
-    "2020": "9",
-    "2021": "10",
-    "2022": "7",
-    "2023": "7",
-    "2024": "11",
-    "SOLVENCIA": "Peso activos corrientes"
-  }
-]
-const bueRatios: Record<BueRatioKey, { [year: string]: string }[]> = {
-  bueRatioSolvencia,
-  bueRatioLiquidez,
-  bueRatioEndeudamiento,
-  bueRatioRentabilidad,
-  bueRatioOperativos,
-  bueRatioEstructuraBalance
-};
+
+
 
 // function formatearConSeparadorDeMiles(numero: number): string {
 //   const partes = String(numero).split('.');
@@ -1008,47 +1232,49 @@ function formatNumber(number : number): string {
 }
 
 export const Efes = () => {
-  const [ratio, setRatio] = useState("Solvencia");
-  const [souRatio, setsouRatio] = useState<SouRatioKey>("souRatioSolvencia");
-  const [bueRatio, setbueRatio] = useState<BueRatioKey>("bueRatioSolvencia");
 
-  // const [subRatio, setSubRatio] = useState("Fondo de Maniobra");
-  const [subRatioid, setSubRatioId] = useState(2);
+  const [subRatioid, setSubRatioId] = useState(0);
 
 
   return (
     <LayoutDash>
       <h2 className="text-xl font-bold mb-4 text-gray-800">EFE'S</h2>
       
-      {/* <Card>
+      <Card>
         <CardContent className="flex justify-center p-3 gap-4 flex-wrap">
-          <Button variant="outline" onClick={() => {setRatio("Solvencia"); setsouRatio("souRatioSolvencia"); setbueRatio("bueRatioSolvencia"); setSubRatioId(0);}}>Solvencia</Button>
-          <Button variant="outline" onClick={() => {setRatio("Liquidez"); setsouRatio("souRatioLiquidez"); setbueRatio("bueRatioLiquidez"); setSubRatioId(0);}}>Liquidez</Button>
-          <Button variant="outline" onClick={() => {setRatio("Endeudamiento"); setsouRatio("souRatioEndeudamiento"); setbueRatio("bueRatioEndeudamiento"); setSubRatioId(0);}}>Endeudamiento</Button>
-          <Button variant="outline" onClick={() => {setRatio("Rentabilidad y Márgenes"); setsouRatio("souRatioRentabilidad"); setbueRatio("bueRatioRentabilidad"); setSubRatioId(0);}}>Rentabilidad y Márgenes</Button>
-          <Button variant="outline" onClick={() => {setRatio("Ratios Operativos"); setsouRatio("souRatioOperativos"); setbueRatio("bueRatioOperativos"); setSubRatioId(0);}}>Ratios Operativos</Button>
-          <Button variant="outline" onClick={() => {setRatio("Estructura Balance"); setsouRatio("souRatioEstructuraBalance"); setbueRatio("bueRatioEstructuraBalance"); setSubRatioId(0);}}>Estructura Balance</Button>
+          <Button variant="outline" onClick={() => {setSubRatioId(0)}}>Total Efectivo - Act. Operación</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Total Efectivo - Act. De Inversión</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(2)}}>Total Efectivo - Act. Financiamiento</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(3)}}>Variación de Efec. Y Equi. Efect en el Año</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(4)}}>Efectivo y Equivalente de Efecto a inicio de Año</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(5)}}>Efectivo al Final del Período</Button>
+
         </CardContent>
       </Card>
 
-       */}
+      
 
       
         
-      <div className="flex gap-4">
+    <div className="flex gap-4">
 
-        <Card className="mt-5">
+        {/* <Card className="mt-5">
             <CardContent className="flex justify-center p-3 gap-2 flex-col">
-              {/* <h2 className="text-xl font-bold text-gray-500 text-center mb-2 mt-1">RATIO DE {ratio.toUpperCase()}</h2> */}
               <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Total Efectivo - Act. Operación</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Total Efectivo - Act. De Inversión</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Total Efectivo - Act. Financiamiento</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Variación de Efec. Y Equi. Efect en el Año</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Efectivo y Equivalente de Efecto a inicio de Año</Button>
+              <Button variant="outline" onClick={() => {setSubRatioId(1)}}>Efectivo al Final del Período</Button>
+
             </CardContent>
-        </Card>
+        </Card> */}
 
       <div className="flex gap-4 flex-col w-full">
         <div className="w-full mt-5">
           {
           <Card className="md:w-[100] w-full min-h-[300px] max-h-[400px] p-10 flex justify-center flex-col">
-            <p className="text-center text-2xl font-semibold text-gray-500">{souRatios[souRatio][subRatioid]["SOLVENCIA"].toUpperCase()}</p>
+            <p className="text-center text-2xl font-semibold text-gray-500">{efes[subRatioid].efe}</p>
               <Chart type="bar" className="w-full max-h-[550px]"
                 data = {{
                   "labels": [
@@ -1062,11 +1288,11 @@ export const Efes = () => {
                       {
                           "label": "Southern Copper Perú",
                           "data": [
-                            Number(souRatios[souRatio][subRatioid]["2020"]),
-                            Number(souRatios[souRatio][subRatioid]["2021"]),
-                            Number(souRatios[souRatio][subRatioid]["2022"]),
-                            Number(souRatios[souRatio][subRatioid]["2023"]),
-                            Number(souRatios[souRatio][subRatioid]["2024"])
+                            efes[subRatioid].southern.result[0],
+                            efes[subRatioid].southern.result[1],
+                            efes[subRatioid].southern.result[2],
+                            efes[subRatioid].southern.result[3],
+                            efes[subRatioid].southern.result[4]
                           ],
                           // "type": "bar",
                           "type": "line",
@@ -1080,11 +1306,11 @@ export const Efes = () => {
                           "label": "Buena Ventura",
                           "type": "line",
                           "data": [
-                            Number(bueRatios[bueRatio][subRatioid]["2020"]),
-                            Number(bueRatios[bueRatio][subRatioid]["2021"]),
-                            Number(bueRatios[bueRatio][subRatioid]["2022"]),
-                            Number(bueRatios[bueRatio][subRatioid]["2023"]),
-                            Number(bueRatios[bueRatio][subRatioid]["2024"])
+                            efes[subRatioid].buenaventura.result[0],
+                            efes[subRatioid].buenaventura.result[1],
+                            efes[subRatioid].buenaventura.result[2],
+                            efes[subRatioid].buenaventura.result[3],
+                            efes[subRatioid].buenaventura.result[4]
                           ],
                           "borderColor": "rgba(11, 100, 164, 1)",
                           "backgroundColor": "rgba(11, 100, 164, 0.52)",
@@ -1134,46 +1360,69 @@ export const Efes = () => {
         
 
         </div>
-        <Card  className="mt-5 p-4 w-full">
-        <Table className="w-full">
-                    <TableHeader>
-                        <TableRow className="">
-                            <TableHead className="w-[70px] ">{souRatios[souRatio][subRatioid]["SOLVENCIA"].toUpperCase()}</TableHead>
-                            
-                            <TableHead className="w-[70px] text-center">2020</TableHead>
-                            <TableHead className="w-[70px] text-center">2021</TableHead>
-                            <TableHead className="w-[70px] text-center">2022</TableHead>
-                            <TableHead className="w-[70px] text-center">2023</TableHead>
-                            <TableHead className="w-[70px] text-center">2024</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow key="0" className=" w-full">
-
-                          <TableCell className="font-semibold">Southern Copper Perú</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(souRatios[souRatio][subRatioid]["2020"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(souRatios[souRatio][subRatioid]["2021"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(souRatios[souRatio][subRatioid]["2022"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(souRatios[souRatio][subRatioid]["2023"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(souRatios[souRatio][subRatioid]["2024"]))}</TableCell>
-                      </TableRow>
-                      <TableRow key="0" className=" w-full">
-
-                          <TableCell className="font-semibold">Buena Ventura</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(bueRatios[bueRatio][subRatioid]["2020"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(bueRatios[bueRatio][subRatioid]["2021"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(bueRatios[bueRatio][subRatioid]["2022"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(bueRatios[bueRatio][subRatioid]["2023"]))}</TableCell>
-                          <TableCell className="font-semibold text-center">{formatNumber(Number(bueRatios[bueRatio][subRatioid]["2024"]))}</TableCell>
-                      </TableRow>
-
-                      
-                    </TableBody>
-                </Table>
-      </Card>
+        
       </div>
-    
       
+      
+      </div>
+      <div className="flex gap-4 w-full">
+        <Card  className="mt-5 p-4 w-full">
+          <Table className="w-full">
+              <TableHeader>
+                  <TableRow className="">
+                      <TableHead className="w-[70px] ">SOUTHERN COPPER PERÚ</TableHead>
+                      
+                      <TableHead className="w-[70px] text-center">2020</TableHead>
+                      <TableHead className="w-[70px] text-center">2021</TableHead>
+                      <TableHead className="w-[70px] text-center">2022</TableHead>
+                      <TableHead className="w-[70px] text-center">2023</TableHead>
+                      <TableHead className="w-[70px] text-center">2024</TableHead>
+                  </TableRow>
+              </TableHeader>
+              <TableBody>
+                {
+                  efes[subRatioid].southern.data.map((item, index) => (
+                    <TableRow key={index} className=" w-full">
+                      <TableCell className="font-semibold">{item.Ejercicio}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2020"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2021"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2022"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2023"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2024"]}</TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
+          </Table>
+      </Card>
+      <Card  className="mt-5 p-4 w-full">
+          <Table className="w-full">
+              <TableHeader>
+                  <TableRow className="">
+                      <TableHead className="w-[70px] ">BUENAVENTURA</TableHead>
+                      <TableHead className="w-[70px] text-center">2020</TableHead>
+                      <TableHead className="w-[70px] text-center">2021</TableHead>
+                      <TableHead className="w-[70px] text-center">2022</TableHead>
+                      <TableHead className="w-[70px] text-center">2023</TableHead>
+                      <TableHead className="w-[70px] text-center">2024</TableHead>
+                  </TableRow>
+              </TableHeader>
+              <TableBody>
+                {
+                  efes[subRatioid].buenaventura.data.map((item, index) => (
+                    <TableRow key={index} className=" w-full">
+                      <TableCell className="font-semibold">{item.Ejercicio}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2020"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2021"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2022"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2023"]}</TableCell>
+                      <TableCell className="font-semibold text-center">{item["2024"]}</TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
+          </Table>
+      </Card>
       </div>
 
     </LayoutDash>
