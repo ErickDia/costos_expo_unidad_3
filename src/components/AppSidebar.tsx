@@ -126,9 +126,9 @@ export function AppSidebar() {
                       </SidebarMenuSub>
                       <SidebarMenuSub>
                         <SidebarMenuButton asChild>
-                          <a href="southernVertical">
+                          <a href="southernHorizontal">
                             <Book />
-                            <span>Analisis Hoizontal</span>
+                            <span>Analisis Horizontal</span>
                           </a>
                         </SidebarMenuButton>
                       </SidebarMenuSub>
@@ -173,6 +173,22 @@ export function AppSidebar() {
                           <a href="buenaRatios">
                             <Book />
                             <span>Ratios Financieros</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="buenaVertical">
+                            <Book />
+                            <span>Analisis Vertical</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="buenaHorizontal">
+                            <Book />
+                            <span>Analisis Horizontal</span>
                           </a>
                         </SidebarMenuButton>
                       </SidebarMenuSub>

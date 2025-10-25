@@ -16,6 +16,8 @@ import { RatioComparativo } from './app/ratioComparativo/RatioComparativo'
 import { Efes } from './app/EFES/Efes'
 import { SouthernAnalisisV } from './app/southern/SouthernAnalisisV'
 import { SouthernAnalisisH } from './app/southern/SouthernAnalisisH'
+import { BuenaAnalisisV } from './app/Buenaventura/BuenaAnalisisV'
+import { BuenaAnalisisH } from './app/Buenaventura/BuenaAnalisisH'
 
 function App() {
 
@@ -32,7 +34,8 @@ function App() {
           <Route path='/EFES' element={<Efes />} />
           <Route path='/southernVertical' element={<SouthernAnalisisV  />} />
           <Route path='/southernHorizontal' element={<SouthernAnalisisH  />} />
-
+          <Route path='/buenaVertical' element={<BuenaAnalisisV  />} />
+          <Route path='/buenaHorizontal' element={<BuenaAnalisisH  />} />
           
           
 
