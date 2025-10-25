@@ -124,6 +124,14 @@ export function AppSidebar() {
                           </a>
                         </SidebarMenuButton>
                       </SidebarMenuSub>
+                      <SidebarMenuSub>
+                        <SidebarMenuButton asChild>
+                          <a href="southernVertical">
+                            <Book />
+                            <span>Analisis Hoizontal</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuSub>
                     </CollapsibleContent>
                   </SidebarMenuItem>
                 </Collapsible>

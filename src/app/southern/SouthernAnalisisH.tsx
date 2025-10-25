@@ -510,7 +510,7 @@ const cuentaResultados = [
   }
 ]
 
-export const SouthernAnalisisV = () => {
+export const SouthernAnalisisH = () => {
   return (
     <LayoutDash>
       <h2 className="text-xl font-bold mb-4 text-gray-800">Analisis Vertical</h2>
